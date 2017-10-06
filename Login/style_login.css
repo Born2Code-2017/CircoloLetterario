@@ -1,0 +1,60 @@
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+body{
+    background-image: url("img/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+div.slogan{
+    color: white;
+    font-size: 2.7em;
+    margin-left: 10%;
+    width: 40%;
+    height: 100%;
+    display: table;
+}
+
+.slogan div{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+div.login{
+    background-color: white;
+    margin-right: 5%;
+    height: 100%;
+    width: 25%;
+    display: table;
+}
+
+.login div{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+
+.login form{
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.login form p{
+    font-size: 1.5em;
+}
+
+form input{
+    font-size: 1.em;
+    padding: 5px;
+}
