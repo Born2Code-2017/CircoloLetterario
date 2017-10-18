@@ -1,0 +1,133 @@
+img, embed, object, video{
+    max-width: 100%;
+}
+nav a, button {
+    min-width: 48px;
+    min-height: 48px;
+}
+* {
+    box-sizing: border-box;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    background: rgb(241, 241, 241)
+}
+h1, h2, h3, p{
+    margin:0;
+}
+h3{
+    font-size: 14px;
+}
+p, h3, h4 {
+    color: rgb(78, 78, 78);
+}
+header {
+    padding: 0.5rem 16px 0.5rem 16px;
+    width: 100%;
+    height: 3.4rem;
+    background-color: #B30000 ;
+    color: white;
+    display: flex;
+}
+
+.card{    
+    padding:16px;
+    margin: 16px;
+    margin-top: -16px;
+    background: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.13), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
+}
+/*Header css*/
+
+.notificationButton {
+    height: 2.4rem;
+    width: 2.4rem;
+    background: url("res/notification_icon.png") no-repeat;
+    background-size: auto 100%;
+}
+.menuLogo {
+    flex-grow: 1;
+}
+
+    /* Menu Icon*/
+    .menuButton{
+        height: 2.4rem;
+        width: 2.4rem;    
+        cursor: pointer;
+    }
+    #barra1, #barra2, #barra3{
+        width: 2.4rem;
+        height: 0.2rem;
+        background-color: white;
+        margin: 0.4rem 0 0 0;
+        transition: 0.4s;
+    }
+
+    .change #barra1 {
+        -webkit-transform: rotate(-45deg) translate(-0.2.5rem, 0.6rem) ;
+        transform: rotate(-45deg) translate(-0.25rem, 0.6rem) ;
+    }
+    .change #barra2 {opacity: 0;}
+    .change #barra3 {
+        -webkit-transform: rotate(45deg) translate(-0.25rem, -0.6rem) ;
+        transform: rotate(45deg) translate(-0.25rem, -0.6rem) ;
+    }
+    /*End ---- Menu Icon*/
+/*End ---- Header css*/
+
+.profileBackground {
+    width: 100%;
+    height: 10rem;
+    background: url("res/profile.jpg") no-repeat;
+    background-size: cover;
+    background-position: center; 
+}
+
+/*Mobile event element*/
+.eventBackground {
+    width: 100%;
+    height: 8rem;
+    background: url("res/gogol_1.jpg") no-repeat;
+    background-size: cover;
+    background-position: center; 
+}
+/*End ---- Mobile event element*/
+
+/*Utility*/
+.width20{
+    width: 20%;    
+}
+.width60{
+    width: 60%;
+}
+.texCenter{
+    text-align: center;
+}
+.textJustified{
+    text-align: justify;    
+    text-justify: inter-word;
+}
+.lineMargin{
+    margin-top: 8px;
+}
+.lineIcon{
+    height: 1rem;
+}
+/*End Utility*/
+
+
+
+/*desktop margin 24px*/
+/*
+@media only screen and (min-width: 800px) {
+	.header {
+		
+    padding: 0.5rem 24px 0.5rem 24px;
+	}
+}
+*/
+

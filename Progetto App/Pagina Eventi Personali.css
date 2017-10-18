@@ -1,0 +1,136 @@
+
+body{
+    margin: 0;
+    font-family: 'EB Garamond', serif;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+/* ---- HEADER ---- */
+
+/* Barra */
+
+nav{
+    margin: 0;
+    background-color: #b30000;
+    height: 60px;
+    width: 100%;
+    position:fixed;
+}
+
+#left_nav{
+    width:40%;
+    float: left;
+    overflow: hidden;
+}
+
+/* Icona Menù */
+
+.icona{
+    width: 11%;
+    float: left;
+    cursor: pointer;
+    margin: 10px 5% 0 5%;
+}
+
+#barra1, #barra2, #barra3{
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change #barra1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+.change #barra2 {opacity: 0;}
+
+.change #barra3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+/* Zona Profilo */
+
+#profilo{
+    height: 45px;
+    width: 45px;
+    margin: 7.5px 0 5px 1%;
+    float: left;
+    border-style: solid;
+    border-color:white;
+    border-width: 1px;
+}
+
+#nome{
+    color: white;
+    margin: 10px 10px;
+    float:left;
+}
+
+#nome h2{
+    margin:0;
+    padding: 0;
+    position: relative;
+    top:3px;
+}
+
+/* Logo */
+
+#logo {
+    width: 20%;
+    height: 60px;
+    overflow: hidden;
+    float: left;
+    color: white;
+    margin-top:0;
+    text-align:center;
+}
+
+#logo img{
+    margin-top:4px;
+    height: 50px;
+    width: 65px;
+}
+
+/* Notifiche */
+
+#notifiche{
+    overflow: hidden;
+    width: 40%;
+    height: 60px;
+    float: right;
+}
+
+#notifiche img{
+    position:relative;
+    top:12.5px;
+    left:88%;
+    height: 35px;
+    width: 35px;
+}
+
+@media screen and (max-width:320) {
+    
+    #profilo{
+        display:none;
+    }
+
+    #nome{
+        display:none;
+    }
+}
