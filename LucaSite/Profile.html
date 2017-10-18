@@ -3,45 +3,68 @@
 <head>
     <title>ilClub - Profilo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" 
-          rel="stylesheet">
     <link href="ilClubStyle.css" rel="stylesheet"/>
 </head>
 <body>
-    <header>
-            <div class="menuButton" onclick="showMenu(this)">
+    
+<div>
+    <nav id="menuNav">
+        <div class="profileImg">
+
+        </div>
+        <h2>Sandra Green</h2>      
+        <ul class="menuList">
+            <li><a>Esplora</a></li>
+            <li><a>Profilo</a></li>
+            <li><a>Logout</a></li>
+        </ul>
+    </nav>
+    <div>
+        <header>
+            <div id="menuButton">
                     <div id="barra1"></div>
                     <div id="barra2"></div>
                     <div id="barra3"></div>
                 </div>
-                <script>
-                    function showMenu(x) {
-                        x.classList.toggle("change");
-                    }
-                </script>
-        <!--<div class="menuButton"></div>-->
-        <div class="menuLogo texCenter"><h1>ilClub</h1></div>        
-        <div class="notificationButton"></div>
-    </header>
-	<div class="profileBackground"></div>
-    <section class="card">     
-                <h2>Sandra Green</h2>
-                <h3>SandraGreen@email.com</h3>
-                <p class="textJustified lineMargin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus metus ac lorem vestibulum iaculis. Pellentesque dignissim felis ut sollicitudin suscipit. Curabitur vehicula rhoncus accumsan. </p>        
-    </section>
-
-    <section>
-        <div>
-            <div class="eventBackground"></div>
-            <div class="card">
-                <h2>Manuale del perfetto barman</h2> 
-                <div class="lineMargin">
-                    <img class="lineIcon" src="res/calendar_icon.png">
-                    <span id="dataEvento">13 Aprile 9:30pm</p>
-                </div>
-            </div>
-        </div>        
-    </section>
+            <div class="flexGrow texCenter"><h1>ilClub</h1></div>        
+            <div class="notificationButton"></div>
+        </header>
+        <!--contenuto della pagina-->
+        <section>
+            <div class="profileBackground"></div>
+            <section class="card">     
+                        <h2>Sandra Green</h2>
+                        <h3>SandraGreen@email.com</h3>
+                        <p class="textJustified lineMargin">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus metus ac lorem vestibulum iaculis. Pellentesque dignissim felis ut sollicitudin suscipit. Curabitur vehicula rhoncus accumsan. </p>        
+            </section>
+        
+            <section>
+                <div>
+                    <div class="eventBackground"></div>
+                    <div class="card">
+                        <h2>Manuale del perfetto barman</h2> 
+                        <div class="lineMargin">
+                            <img class="lineIcon" src="res/calendar_icon.png">
+                            <span id="dataEvento">13 Aprile 9:30pm</p>
+                        </div>
+                    </div>
+                </div>        
+            </section>
+        </section>
+    </div>
+</div>
+  
+	
 </body>
 <script src="ilClub.js"></script>
+
+<script>    
+    var menuButton = document.querySelector('#menuButton');
+    menuButton.addEventListener('click', function(e) {
+        var menuNav = document.querySelector('#menuNav');
+        menuNav.classList.toggle('change1');
+        menuButton.classList.toggle('change');
+        e.stopPropagation();
+    });
+    </script>
 </html>

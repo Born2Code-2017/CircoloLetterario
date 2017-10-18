@@ -1,7 +1,14 @@
+
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond');
+:root {
+    --margin-layout: 16px;
+    --negative-margin-layout: -16px;
+    --ilClub-red: #B30000;
+}
 img, embed, object, video{
     max-width: 100%;
 }
-nav a, button {
+button {
     min-width: 48px;
     min-height: 48px;
 }
@@ -13,11 +20,15 @@ body, html {
     padding: 0;
     width: 100vw;
     font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'EB Garamond', serif;
     background: rgb(241, 241, 241)
 }
-h1, h2, h3, p{
-    margin:0;
+h1, h2, h3, p, ul{
+    margin: 0px;
+    padding: 0px;
+}
+ul{
+    list-style-type: none;    
 }
 h3{
     font-size: 14px;
@@ -26,41 +37,66 @@ p, h3, h4 {
     color: rgb(78, 78, 78);
 }
 header {
-    padding: 0.5rem 16px 0.5rem 16px;
+    padding: 0.5rem var(--margin-layout) 0.5rem var(--margin-layout);
     width: 100%;
     height: 3.4rem;
-    background-color: #B30000 ;
+    background-color: var(--ilClub-red) ;
     color: white;
     display: flex;
 }
 
 .card{    
-    padding:16px;
-    margin: 16px;
-    margin-top: -16px;
+    padding: var(--margin-layout);
+    margin: var(--margin-layout);
+    margin-top: var(--negative-margin-layout);
     background: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.13), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
 }
 /*Header css*/
-
+.menuList li{
+    padding-bottom: var(--margin-layout);
+    padding-top: var(--margin-layout);
+    font-size: 1.3rem;
+}
 .notificationButton {
-    height: 2.4rem;
-    width: 2.4rem;
+    height: 2.2rem;
+    width: 2.2rem;
     background: url("res/notification_icon.png") no-repeat;
     background-size: auto 100%;
 }
-.menuLogo {
-    flex-grow: 1;
+#menuNav {
+    width: 300px;
+    height: 100%;
+    background-color: var(--ilClub-red) ;
+    position: absolute;
+    padding: var(--margin-layout);
+    margin-top: 3.4rem;
+    color: white;
+    -webkit-transform: translate(-300px, 0);
+    transform: translate(-300px, 0);
+    transition: transform 0.3s ease;
+  }
+   #menuNav.change1 {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+.profileImg {
+    width: 9rem;
+    height: 9rem;
+    margin: var(--margin-layout) auto var(--margin-layout) auto;
+    border-radius: 50%;
+    border: 0.18rem white solid;
+    background: url("res/profile.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
 }
-
     /* Menu Icon*/
-    .menuButton{
-        height: 2.4rem;
-        width: 2.4rem;    
+    #menuButton{
+        height: 2.1rem;
+        width: 2rem;    
         cursor: pointer;
     }
     #barra1, #barra2, #barra3{
-        width: 2.4rem;
         height: 0.2rem;
         background-color: white;
         margin: 0.4rem 0 0 0;
@@ -81,7 +117,7 @@ header {
 
 .profileBackground {
     width: 100%;
-    height: 10rem;
+    height: 14rem;
     background: url("res/profile.jpg") no-repeat;
     background-size: cover;
     background-position: center; 
@@ -98,6 +134,12 @@ header {
 /*End ---- Mobile event element*/
 
 /*Utility*/
+.flex {
+    display: flex;
+}
+.flexGrow {
+    flex-grow: 1;
+}
 .width20{
     width: 20%;    
 }
@@ -116,6 +158,12 @@ header {
 }
 .lineIcon{
     height: 1rem;
+}
+.overflow{
+    overflow: hidden;
+}
+.float{
+    float:left;
 }
 /*End Utility*/
 
