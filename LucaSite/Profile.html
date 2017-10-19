@@ -9,28 +9,45 @@
     
 <div>
     <nav id="menuNav">
-        <div class="profileImg">
-
+        <div class="profileImg"></div>
+        <h2 class="texCenter lineMargin">Sandra Green</h2>
+        <div class="counterContainer overflow">
+            <div class="floatLeft texCenter">
+                <p>4</p>
+                <img class="halfLineMargin lineIcon" src="res/bookmark.svg">
+            </div>
+            <div class="floatRight texCenter">
+                <p>1</p>
+                <img class="halfLineMargin lineIcon" src="res/bookmark.svg">
+            </div>
         </div>
-        <h2>Sandra Green</h2>      
-        <ul class="menuList">
-            <li><a>Esplora</a></li>
-            <li><a>Profilo</a></li>
-            <li><a>Logout</a></li>
+        <ul class="menuList paddinglayoutRoule">
+            <li>Esplora<img src="res/expand_arrow.png"></li>
+            <li>Profilo<img src="res/expand_arrow.png"></li>
+            <li>Logout<img src="res/expand_arrow.png"></li>
         </ul>
     </nav>
     <div>
         <header>
-            <div id="menuButton">
+            <div class="width35">
+                <div id="menuButton" class="headerButton">
                     <div id="barra1"></div>
                     <div id="barra2"></div>
                     <div id="barra3"></div>
                 </div>
-            <div class="flexGrow texCenter"><h1>ilClub</h1></div>        
-            <div class="notificationButton"></div>
+            </div>
+           
+            <div class="flexGrow texCenter headerButton"><h1>ilClub</h1></div>
+
+            <div class="width35 overflow">
+                <div id="notificationButton" class="headerButton floatRight">
+                    <img src="res/notification_icon.png" alt="notification">
+                </div>            
+            </div>
         </header>
+
         <!--contenuto della pagina-->
-        <section>
+        <main>
             <div class="profileBackground"></div>
             <section class="card">     
                         <h2>Sandra Green</h2>
@@ -50,7 +67,7 @@
                     </div>
                 </div>        
             </section>
-        </section>
+        </main>
     </div>
 </div>
   

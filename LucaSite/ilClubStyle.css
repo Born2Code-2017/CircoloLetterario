@@ -36,73 +36,44 @@ h3{
 p, h3, h4 {
     color: rgb(78, 78, 78);
 }
-header {
-    padding: 0.5rem var(--margin-layout) 0.5rem var(--margin-layout);
+header {    
     width: 100%;
     height: 3.4rem;
     background-color: var(--ilClub-red) ;
     color: white;
     display: flex;
+    position: fixed;
+    top: 0px;
 }
-
-.card{    
-    padding: var(--margin-layout);
-    margin: var(--margin-layout);
-    margin-top: var(--negative-margin-layout);
-    background: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.13), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
+main {
+    margin-top: 3.4rem;
 }
 /*Header css*/
-.menuList li{
-    padding-bottom: var(--margin-layout);
-    padding-top: var(--margin-layout);
-    font-size: 1.3rem;
-}
-.notificationButton {
-    height: 2.2rem;
-    width: 2.2rem;
-    background: url("res/notification_icon.png") no-repeat;
-    background-size: auto 100%;
-}
-#menuNav {
-    width: 300px;
+.headerButton {
     height: 100%;
-    background-color: var(--ilClub-red) ;
-    position: absolute;
-    padding: var(--margin-layout);
-    margin-top: 3.4rem;
-    color: white;
-    -webkit-transform: translate(-300px, 0);
-    transform: translate(-300px, 0);
-    transition: transform 0.3s ease;
-  }
-   #menuNav.change1 {
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
-  }
-.profileImg {
-    width: 9rem;
-    height: 9rem;
-    margin: var(--margin-layout) auto var(--margin-layout) auto;
-    border-radius: 50%;
-    border: 0.18rem white solid;
-    background: url("res/profile.jpg") no-repeat;
-    background-size: cover;
-    background-position: center;
+    width: fit-content;
+    padding: 0.5rem var(--margin-layout) 0.5rem var(--margin-layout);
 }
+.headerButton:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+#notificationButton>img{
+    width: 2.2rem;
+}
+
     /* Menu Icon*/
-    #menuButton{
-        height: 2.1rem;
-        width: 2rem;    
+    #menuButton {        
         cursor: pointer;
     }
     #barra1, #barra2, #barra3{
-        height: 0.2rem;
+        width: 2.2rem;
+        height: 0.25rem;
         background-color: white;
         margin: 0.4rem 0 0 0;
-        transition: 0.4s;
+        transition: 0.3s;
+        transition-timing-function: ease-in;
     }
-
     .change #barra1 {
         -webkit-transform: rotate(-45deg) translate(-0.2.5rem, 0.6rem) ;
         transform: rotate(-45deg) translate(-0.25rem, 0.6rem) ;
@@ -113,8 +84,67 @@ header {
         transform: rotate(45deg) translate(-0.25rem, -0.6rem) ;
     }
     /*End ---- Menu Icon*/
+
+    /* Side Menu*/
+    #menuNav {
+        width: 300px;
+        height: 100%;
+        background-color: var(--ilClub-red) ;
+        position: fixed;
+        padding: var(--margin-layout);        
+        color: white;
+        -webkit-transform: translate(-300px);
+        transform: translateX(-300px);
+        transition: transform 0.2s ease-in;
+    }
+      #menuNav.change1 {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    .profileImg {
+        width: 9rem;
+        height: 9rem;
+        margin: 0 auto 0 auto;
+        border-radius: 50%;
+        border: 0.18rem white solid;
+        background: url("res/profile.jpg") no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .counterContainer {
+        width: 9rem;        
+        margin: 0 auto 0 auto;
+        padding: 0 var(--margin-layout) 0 var(--margin-layout);
+    }
+    .counterContainer p {
+        color: white;
+        font-size: 1.75rem;
+    }
+    .counterContainer img {
+        height: 1.45rem;  
+    }
+    .menuList li{
+        padding-bottom: var(--margin-layout);
+        padding-top: var(--margin-layout);
+        font-size: 1.3rem;
+        overflow: hidden;
+        transition: transform 0.1s ease-in;
+    }
+    .menuList li img {
+        height: 1.45rem;
+        float: right;        
+    }
+    .menuList li:hover {
+        -webkit-transform: translate(35px, 0);
+        transform: translate(35px, 0);
+    }
+    /*End ---- Side Menu*/
+
+
 /*End ---- Header css*/
 
+
+/*ProfilePage*/
 .profileBackground {
     width: 100%;
     height: 14rem;
@@ -122,16 +152,26 @@ header {
     background-size: cover;
     background-position: center; 
 }
+/*End ---- ProfilePage*/
 
-/*Mobile event element*/
-.eventBackground {
-    width: 100%;
-    height: 8rem;
-    background: url("res/gogol_1.jpg") no-repeat;
-    background-size: cover;
-    background-position: center; 
-}
-/*End ---- Mobile event element*/
+/*IlClub UI elements*/
+    /*Mobile event element*/
+    .eventBackground {
+        width: 100%;
+        height: 8rem;
+        background: url("res/gogol_1.jpg") no-repeat;
+        background-size: cover;
+        background-position: center; 
+    }
+    .card{    
+        padding: var(--margin-layout);
+        margin: var(--margin-layout);
+        margin-top: var(--negative-margin-layout);
+        background: white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.13), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
+    }
+    /*End ---- Mobile event element*/
+/*End ---- IlClub UI elements*/
 
 /*Utility*/
 .flex {
@@ -140,8 +180,8 @@ header {
 .flexGrow {
     flex-grow: 1;
 }
-.width20{
-    width: 20%;    
+.width35{
+    width: 35%;    
 }
 .width60{
     width: 60%;
@@ -156,14 +196,23 @@ header {
 .lineMargin{
     margin-top: 8px;
 }
+.halfLineMargin{
+    margin-top: 4px;
+}
 .lineIcon{
     height: 1rem;
 }
 .overflow{
     overflow: hidden;
 }
-.float{
+.floatLeft{
     float:left;
+}
+.floatRight{
+    float: right;
+}
+.paddinglayoutRoule {
+    padding: var(--margin-layout);
 }
 /*End Utility*/
 
@@ -178,4 +227,3 @@ header {
 	}
 }
 */
-
