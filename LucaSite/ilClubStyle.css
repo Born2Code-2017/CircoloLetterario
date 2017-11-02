@@ -18,7 +18,6 @@ button {
 body, html {
     margin: 0;
     padding: 0;
-    width: 100vw;
     font-size: 14px;
     font-family: 'EB Garamond', serif;
     background: rgb(241, 241, 241)
@@ -45,21 +44,22 @@ header {
     position: fixed;
     top: 0px;
 }
-main {
+.page {
     margin-top: 3.4rem;
+    display: flex;
 }
 /*Header css*/
 .headerButton {
     height: 100%;
     width: fit-content;
-    padding: 0.5rem var(--margin-layout) 0.5rem var(--margin-layout);
+    padding: 0.8rem var(--margin-layout);
 }
 .headerButton:hover {
     background-color: rgba(255, 255, 255, 0.25);
 }
 
 #notificationButton>img{
-    width: 2.2rem;
+    height: 100%;
 }
 
     /* Menu Icon*/
@@ -67,12 +67,15 @@ main {
         cursor: pointer;
     }
     #barra1, #barra2, #barra3{
-        width: 2.2rem;
-        height: 0.25rem;
+        width: 1.9rem;
+        height: 0.2rem;
         background-color: white;
-        margin: 0.4rem 0 0 0;
+        margin: 0.2rem 0px;     
         transition: 0.3s;
         transition-timing-function: ease-in;
+    }
+    #barra2{
+        margin: 0.4rem 0px;
     }
     .change #barra1 {
         -webkit-transform: rotate(-45deg) translate(-0.2.5rem, 0.6rem) ;
@@ -221,3 +224,54 @@ main {
 	}
 }
 */
+@media only screen and (min-width: 500px) {
+    #menuNav {
+      -webkit-transform: translate(-400px);
+      transform: translateX(-400px);
+      width: 400px;
+
+    }
+}
+@media only screen and (min-width: 800px) {
+    #menuNav {
+      -webkit-transform: translate(0);
+      transform: translateX(0);
+      position: static;      
+      /*fisso sulla sinistra*/      
+    }
+    #menuButton{
+        display: none;
+    }
+    :root {
+        --margin-layout: 24px;
+        --negative-margin-layout: -24px;
+    }
+}
+/*Desktop*/
+@media only screen and (min-width: 1000px) {
+    #menuNav {
+        -webkit-transform: translate(-400px);
+        transform: translateX(-400px);
+        position: fixed;
+        /*scorrimento da sinistra*/
+    }
+    #menuButton{
+        display: block;
+    }
+}
+/*2K TV*/
+@media only screen and (min-width: 1440px) {
+        #menuNav {        
+            width: 500px;
+            -webkit-transform: translate(0);
+            transform: translateX(0);
+            position: static;
+            /*fisso sulla sinistra*/
+        }
+        #menuButton{
+            display: none;
+        }
+        body, html {          
+            font-size: 26px;
+        }
+}
