@@ -278,7 +278,10 @@ header {
         #menuButton{
             display: none;
         }
-        body, html {          
-            font-size: 26px;
-        }
+}
+/*2K TV*/
+@media only screen and (min-width: 2500px) {
+    body, html {          
+        font-size: 26px;
+    }
 }
