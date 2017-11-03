@@ -130,7 +130,7 @@ nav{
     width: 35px;
 }
 
-/* Parte principale */
+/* ------------------------------- Parte principale ---------------------------------- */
 
 main {
     color: #797c7e;
@@ -163,7 +163,7 @@ textarea{
     padding: 13px 10px;
 }
 
-input[type=button], input[type=submit], input[type=reset] {
+input[type=button], input[type=submit] {
     background: transparent;
     border: 1px solid #797c7e;
     color: #797c7e;
@@ -171,8 +171,19 @@ input[type=button], input[type=submit], input[type=reset] {
     padding: 13px 32px;
 }
 
-input[type=reset] {
-    border: none;
+#back_btn {
+    padding: 13px 32px;
+}
+
+#back_btn span {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.9em;
+    color: #797c7e;
+    padding: 13px;
+}
+
+.fa-chevron-left{
+    color: #b30000;
 }
 
 input[type=submit] {
@@ -186,7 +197,7 @@ div.submit_row {
 
 
 
-/* For Desktop */
+/* ------------------------------------ For Desktop -----------------------------------*/
 .col-1 {
     width: 8.33%;
 }
@@ -245,7 +256,7 @@ div.submit_row {
         display:none;
     }
 
-    /* For mobile phones: */
+    /* ----------------------- For mobile phones: ---------------------------------*/
     [class*="col-"] {
         width: 100%;
     }
@@ -253,12 +264,12 @@ div.submit_row {
     textarea {
         width: 90%;
     }
-
+/* 
     input[type=button] {
         display: none;
-    }
+    } */
     
-    input[type=reset] {
+    #back_button {
         padding: 10px 5px;
     }
 
