@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style_new_event.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
-
+    <script src="libs/jquery.full.js"></script>
 </head>
 
 <body>
@@ -29,7 +29,7 @@
                     <img src="img/profile.jpg" alt="profile" id="profilo">
                 </div>
                 <div id="nome">
-                    <h2>Scarlett Joahnsson</h2>
+                    <h2>Sandra Green</h2>
                 </div>
             </div>
             <div id="logo">
@@ -44,20 +44,18 @@
     <!-- Parte principale -->
     <main>
         <h1>Nuovo evento</h1>
-        <form class="form_event" action="/action_page.php">
+        <form id="form" action="/action_page.php">
             
             <!-- Prima riga -->
             <div class="row">
                 <div class="col-6 padding_bottom">
-                    <label for="nome_evento">Nome dell'evento</label>
-                    <br>
-                    <input type="text" name="" id="">
+                    <label>Nome dell'evento</label><br>                    
+                    <input id="nomeEvento" type="text" name="nomeEvento">
                 </div>
 
                 <div class="col-6 padding_bottom">
-                    <label for="scegli_libreria">Scegli libreria</label>
-                    <br>
-                    <select name="librerie">
+                    <label>Scegli libreria</label><br>                    
+                    <select id="librerie" name="librerie">
                         <option value="ostia">Libreria Ostia</option>
                         <option value="ostia1">Libreria Ostia 1</option>
                         <option value="ostia2">Libreria Ostia 2</option>
@@ -69,45 +67,44 @@
             <!-- Seconda riga -->
             <div class="row">
                 <div class="col-6 padding_bottom">
-                    <label for="data">Data</label>
-                    <br>
-                    <input type="date" name="" id="">
+                    <label>Data</label><br>                    
+                    <input type="date" name="data" id="data">
                 </div>
 
                 <div class="col-6 padding_bottom">
-                    <label for="orario">Ora</label>
-                    <br>
-                    <input type="time" name="" id="">
+                    <label>Ora</label><br>                    
+                    <input type="time" name="ora" id="ora">
                 </div>
             </div>
 
             <!-- Terza riga -->
             <div class="row padding_bottom">
                 <div class="col-12">
-                    <label for="">Descrizione</label>
+                    <label>Descrizione</label>
                     <br>
-                    <textarea name="description" rows="5"> </textarea>
+                    <textarea name="descrizione" id="descrizione" rows="5"> </textarea>
                 </div>
             </div>
 
             <!-- Quarta riga -->
             <div class="row padding_bottom">
                 <div class="col-12">
-                    <input type="button" value="scegli immagine">
+                    <input type="button" value="scegli immagine" id="img_btn">
                 </div>
             </div>
 
             <!-- Quinta riga -->
             <div class="row padding_bottom submit_row">
                 <div class="col-12">
-                    <input type="reset" value="❮  cancella">
-                    <input type="submit" value="invia">
+                    <i id="back_btn" class="fa fa-chevron-left" aria-hidden="true"> <span>&nbsp;&nbsp;cancella</span> </i>
+                    <!-- <input type="reset" value="❮  cancella"> -->
+                    <input id="send_btn" type="submit" value="invia">
                 </div>
             </div>
         </form>
-
-
     </main>
+
+    <script src="new_event.js"></script>
 </body>
 
 </html>
