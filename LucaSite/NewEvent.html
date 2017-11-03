@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ilClub - Profilo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link href="ilClubStyle.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <div class="width35">
+            <div id="menuButton" class="headerButton">
+                <div id="barra1"></div>
+                <div id="barra2"></div>
+                <div id="barra3"></div>
+            </div>
+        </div>
+
+        <div class="flexGrow texCenter headerButton">
+            <h1>ilClub</h1>
+        </div>
+
+        <div class="width35 overflow">
+            <div id="notificationButton" class="headerButton floatRight">
+                <img src="res/notifications-button.svg" alt="notification">
+            </div>
+        </div>
+    </header>
+    <div class="page">
+        <nav id="menuNav">
+            <div class="profileImg"></div>
+            <h2 class="texCenter lineMargin">Sandra Green</h2>
+            <div class="counterContainer overflow">
+                <div class="floatLeft texCenter">
+                    <p id="menuNav_interestedCounter">4</p>
+                    <img class="halfLineMargin lineIcon" alt="interested" src="res/bookmark.svg" />
+                </div>
+                <div class="floatRight texCenter">
+                    <p id="menuNav_goingCounter">1</p>
+                    <img class="halfLineMargin lineIcon" alt="going" src="res/bookmark.svg" />
+                </div>
+            </div>
+            <ul class="menuList paddingLayoutRoule">
+                <li>Esplora
+                    <img src="res/next.svg" alt="open" />
+                </li>
+                <li>Profilo
+                    <img src="res/next.svg" alt="open" />
+                </li>
+                <li>Logout
+                    <img src="res/next.svg" alt="open" />
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <!--contenuto della pagina-->
+
+            <form id="newEventForm" class="contentCenter" action="/action_page.php">
+                <div class="pageTitle">
+                    <input class="roundButton" type="button">
+                </div>
+                <div class="cardDetail">
+                    <label for="nome_evento">Nome dell'evento</label>
+                    <input type="text" name="" id="">
+                    <div>
+                        <label for="scegli_libreria">Scegli libreria</label>
+                        <select name="librerie">
+                            <option value="ostia">Libreria Ostia</option>
+                            <option value="ostia1">Libreria Ostia 1</option>
+                            <option value="ostia2">Libreria Ostia 2</option>
+                            <option value="ostia3">Libreria Ostia 3</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="data">Data</label>
+                        <input type="date" name="" id="">
+                    </div>
+
+                    <div>
+                        <label for="orario">Ora</label>
+                        <input type="time" name="" id="">
+                    </div>
+
+                    <!-- Terza riga -->
+                    <div>
+                        <label for="">Descrizione</label>
+                        <textarea name="description" rows="5"> </textarea>
+                    </div>
+
+                    <!-- Quarta riga -->                    
+                </div>
+                <div class="flex paddingLayoutRoule">
+                    <input class="flexGrow squareButton" type="reset" value="❮  cancella">
+                    <div class="widthLayoutRoule"></div>
+                    <input class="flexGrow squareButton" type="submit" value="invia">
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script src="ilClub.js"></script>
+</body>
+
+</html>

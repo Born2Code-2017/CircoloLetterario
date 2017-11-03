@@ -5,6 +5,7 @@
     --half-margin-layout: 8px;
     --negative-margin-layout: -16px;
     --ilClub-red: #B30000;
+    --ilClub-darkGray : rgb(78, 78, 78);
 }
 img, embed, object, video{
     max-width: 100%;
@@ -36,6 +37,7 @@ h3{
 p, h3, h4 {
     color: rgb(78, 78, 78);
 }
+input{ display: block;}
 header {    
     width: 100%;
     height: 3.4rem;
@@ -46,8 +48,11 @@ header {
     top: 0px;
 }
 .page {
-    margin-top: 3.4rem;
+    padding-top: 3.4rem;
     display: flex;
+}
+main{
+    flex-grow: 1;
 }
 /*Header css*/
 .headerButton {
@@ -144,7 +149,56 @@ header {
     /*End ---- Side Menu*/
 /*End ---- Header css*/
 
+/*home Page*/
 
+#Calendario{
+    padding: var(--margin-layout);
+    background-color: rgba(0, 0, 0, 0.23);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+/*    filter: blur(2.5px);*/
+
+#Calendario>div{
+    width: 100%;
+    /*height: 80%;*/
+    background: white;
+}
+.calendarHeader{
+    height: 7rem;
+    text-align: center;
+    background: #B30000;
+    color: white;
+    padding: var(--margin-layout)
+}
+.calendarButton{
+    width: 1.3rem;
+    height: 1.45rem;
+}
+#calendarBack{
+    background: url("res/back_black.svg") no-repeat center;
+}
+#calendarNext{
+    background: url("res/next_black.svg") no-repeat center;
+}
+.calendarSelectedDay{
+    display: table-cell;
+    background-color: #B30000;
+    color: white;
+    border-radius: 50%;
+}
+#calendarDaysGrid>div{
+    width: 14.28%;
+    height: 3rem;
+    text-align: center;
+    font-size: 1.36rem;
+}
+#calendarDaysGrid>div:hover{
+   background-color: rgb(224, 224, 224);
+}
+/*End ---- Home Page*/
 /*ProfilePage*/
 .profileBackground {
     height: 14rem;
@@ -154,7 +208,29 @@ header {
 }
 /*End ---- ProfilePage*/
 
+
+#newEventForm label, input, select, textarea {
+    display: block;
+    width: 100%;
+    min-height: 2rem;
+}
+
 /*IlClub UI elements*/
+.squareButton{
+    height: 2.7rem;
+    padding: var(--half-margin-layout);
+    background-color: white;
+    border: 1px gray solid;
+}
+.roundButton{
+    position: absolute;
+    width: 3.3rem;
+    height: 3.3rem;
+    border-radius: 50%;
+    border:0px;
+    background: var(--ilClub-red);
+    right: var(--margin-layout);
+}
     /*Mobile event element*/
     .cardImg {
         width: 100%;
@@ -176,6 +252,16 @@ header {
         margin: 0px 0px var(--margin-layout) 0px;
         box-shadow:0;
     }
+    .pageTitle {
+        padding: var(--margin-layout);
+        height: 10rem;
+        background-color: var(--ilClub-darkGray);
+        color: white;
+        text-align: left;        
+    }
+    .pageTitle * {
+        margin: auto auto auto 0;       
+    }
     /*End ---- Mobile event element*/
 /*End ---- IlClub UI elements*/
 
@@ -186,14 +272,35 @@ header {
 .flexGrow {
     flex-grow: 1;
 }
+.flexWrap {
+    flex-wrap: wrap;
+}
+.widthLayoutRoule{
+    width: var(--margin-layout);    
+}
+.width10{
+    width: 10%;    
+}
 .width35{
     width: 35%;    
 }
 .width60{
     width: 60%;
 }
+.width50{
+    width: 50%;
+}
+.width100{
+    width: 100%;
+}
 .texCenter{
     text-align: center;
+}
+.contentCenter {
+	margin: 0 auto auto auto;
+}
+.contentVerticalCenter {
+	margin: auto 0;
 }
 .textJustified{
     text-align: justify;    
@@ -220,6 +327,12 @@ header {
 .paddingLayoutRoule {
     padding: var(--margin-layout);
 }
+.paddingHalfLayoutRoule {
+    padding: var(--half-margin-layout);
+}
+.whiteFont{
+    color: white;
+}
 /*End Utility*/
 
 /*desktop margin 24px*/
@@ -233,10 +346,8 @@ header {
 */
 @media only screen and (min-width: 500px) {
     #menuNav {
-      -webkit-transform: translate(-400px);
-      transform: translateX(-400px);
-      width: 400px;
-
+      -webkit-transform: translate(-300px);
+      transform: translateX(-300px);
     }
 }
 @media only screen and (min-width: 800px) {
@@ -257,8 +368,8 @@ header {
 /*Desktop*/
 @media only screen and (min-width: 1000px) {
     #menuNav {
-        -webkit-transform: translate(-400px);
-        transform: translateX(-400px);
+        -webkit-transform: translate(-300px);
+        transform: translateX(-300px);
         position: fixed;
         /*scorrimento da sinistra*/
     }
@@ -268,8 +379,7 @@ header {
 }
 /*2K TV*/
 @media only screen and (min-width: 1440px) {
-        #menuNav {        
-            width: 500px;
+        #menuNav {
             -webkit-transform: translate(0);
             transform: translateX(0);
             position: static;
