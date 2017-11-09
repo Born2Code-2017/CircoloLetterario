@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond');
+:root {
+    --margin-layout: 16px;
+    --half-margin-layout: 8px;
+    --negative-margin-layout: -16px;
+    --ilClub-red: #B30000;
+    --ilClub-darkGray : rgb(78, 78, 78);
+}
+img, embed, object, video{
+    max-width: 100%;
+}
+button {
+    min-width: 48px;
+    min-height: 48px;
+}
+* {
+    box-sizing: border-box;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: 'EB Garamond', serif;
+    background: rgb(241, 241, 241)
+}
+h1, h2, h3, p, ul{
+    margin: 0px;
+    padding: 0px;
+}
+ul{
+    list-style-type: none;    
+}
+h3{
+    font-size: 14px;
+}
+p, h3, h4 {
+    color: rgb(78, 78, 78);
+}
+a{
+    text-decoration: none; color:white;
+}
+input{ display: block;}
+header {    
+    width: 100%;
+    height: 3.4rem;
+    background-color: var(--ilClub-red) ;
+    color: white;
+    display: flex;
+    position: fixed;
+    top: 0px;
+}
+.page {
+    padding-top: 3.4rem;
+    display: flex;
+}
+main{
+    flex-grow: 1;
+}
+/*Header css*/
+.headerButton {
+    height: 100%;
+    width: fit-content;
+    padding: 0.8rem var(--margin-layout);
+}
+.headerButton:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+#notificationButton>img{
+    height: 100%;
+}
+
+    /* Menu Icon*/
+    #menuButton {        
+        cursor: pointer;
+    }
+    #barra1, #barra2, #barra3{
+        width: 1.9rem;
+        height: 0.2rem;
+        background-color: white;
+        margin: 0.2rem 0px;     
+        transition: 0.3s;
+        transition-timing-function: ease-in;
+    }
+    #barra2{
+        margin: 0.4rem 0px;
+    }
+    .change #barra1 {
+        -webkit-transform: rotate(-45deg) translate(-0.2.5rem, 0.6rem) ;
+        transform: rotate(-45deg) translate(-0.25rem, 0.6rem) ;
+    }
+    .change #barra2 {opacity: 0;}
+    .change #barra3 {
+        -webkit-transform: rotate(45deg) translate(-0.25rem, -0.6rem) ;
+        transform: rotate(45deg) translate(-0.25rem, -0.6rem) ;
+    }
+    /*End ---- Menu Icon*/
+
+    /* Side Menu*/
+    #menuNav {
+        width: 300px;
+        height: 100%;
+        background-color: var(--ilClub-red) ;
+        position: fixed;
+        padding: var(--margin-layout);        
+        color: white;
+        -webkit-transform: translate(-300px);
+        transform: translateX(-300px);
+        transition: transform 0.2s ease-in;
+        z-index: 500;
+    }
+      #menuNav.change1 {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    .profileImg {
+        width: 9rem;
+        height: 9rem;
+        margin: 0 auto 0 auto;
+        border-radius: 50%;
+        border: 0.18rem white solid;
+        background: url("res/profile.jpg") no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .counterContainer {
+        width: 8rem;        
+        margin: 0 auto 0 auto;
+    }
+    .counterContainer p {
+        color: white;
+        font-size: 1.75rem;        
+    }
+    .counterContainer img {
+        height: 1.45rem;  
+    }
+    .menuList li{
+        padding-bottom: var(--margin-layout);
+        padding-top: var(--margin-layout);
+        font-size: 1.3rem;
+        overflow: hidden;
+        transition: transform 0.1s ease-in;
+    }
+
+    .menuList li a{
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+    }
+    .menuList li:hover {
+        -webkit-transform: translate(35px, 0);
+        transform: translate(35px, 0);
+    }
+    .menuList li img {
+        height: 1.45rem;
+        float: right;        
+    }
+    /*End ---- Side Menu*/
+/*End ---- Header css*/
+
+/*home Page*/
+
+#Calendario{
+    padding: var(--margin-layout);
+    background-color: rgba(0, 0, 0, 0.23);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+/*    filter: blur(2.5px);*/
+
+#Calendario>div{
+    width: 100%;
+    /*height: 80%;*/
+    background: white;
+}
+.calendarHeader{
+    height: 7rem;
+    text-align: center;
+    background: #B30000;
+    color: white;
+    padding: var(--margin-layout)
+}
+.calendarButton{
+    width: 1.3rem;
+    height: 1.45rem;
+}
+#calendarBack{
+    background: url("res/back_black.svg") no-repeat center;
+}
+#calendarNext{
+    background: url("res/next_black.svg") no-repeat center;
+}
+.calendarSelectedDay{
+    display: table-cell;
+    background-color: #B30000;
+    color: white;
+    border-radius: 50%;
+}
+#calendarDaysGrid>div{
+    width: 14.28%;
+    height: 3rem;
+    text-align: center;
+    font-size: 1.36rem;
+}
+#calendarDaysGrid>div:hover{
+   background-color: rgb(224, 224, 224);
+}
+/*End ---- Home Page*/
+/*ProfilePage*/
+.profileBackground {
+    height: 14rem;
+    background: url("res/profile.jpg") no-repeat;
+    background-size: cover;
+    background-position: center; 
+}
+/*End ---- ProfilePage*/
+
+
+#newEventForm label, input, select, textarea {
+    display: block;
+    width: 100%;
+    min-height: 2rem;
+}
+
+/*IlClub UI elements*/
+.squareButton{
+    height: 2.7rem;
+    padding: var(--half-margin-layout);
+    background-color: white;
+    border: 1px gray solid;
+}
+.roundButton{
+    position: absolute;
+    width: 3.3rem;
+    height: 3.3rem;
+    border-radius: 50%;
+    border:0px;
+    background-color: var(--ilClub-red);
+    right: var(--margin-layout);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+}
+.roundButton:hover{
+    box-shadow: none;
+}
+.calendarIcon{    
+    background-image: url("res/calendar-white.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+.newIcon{    
+    background-image: url("res/new.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+    /*Mobile event element*/
+    .cardImg {
+        width: 100%;
+        height: 8rem;
+        background: url("res/gogol_1.jpg") no-repeat;
+        background-size: cover;
+        background-position: center; 
+    }
+    .cardDetail{
+        position: relative;
+        padding: var(--margin-layout);
+        padding-top: var(--half-margin-layout);
+        margin: var(--margin-layout);
+        margin-top: var(--negative-margin-layout);
+        background: white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.13), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
+        transition: margin 0.2s ease-in;
+    }
+    .cardDetail #partecipanti,
+    .cardDetail #eventDescription {
+        display: none;
+    }
+    .cardDetail:hover{
+        margin: 0px 0px var(--margin-layout) 0px;
+        box-shadow:0;
+    }
+    .cardDetail:hover> div{
+        display: block;
+    }
+    .cardDetail:hover #partecipanti,
+    .cardDetail:hover #eventDescription {
+        display: block;
+    }
+    .cardRoundButton{
+        position: absolute;
+        display: none;
+        width: 3.3rem;
+        height: 3.3rem;
+        border-radius: 50%;
+        border:0px;
+        background-color: var(--ilClub-red);
+        background-image: url("res/bookmark.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        right: var(--margin-layout);
+        top: -1.65rem;
+        margin-left: auto;
+    }
+    .pageTitle {
+        padding: var(--margin-layout);
+        height: 10rem;
+        background-color: var(--ilClub-darkGray);
+        color: white;
+        text-align: left;        
+    }
+    .pageTitle * {
+        margin: auto auto auto 0;       
+    }
+    /*End ---- Mobile event element*/
+/*End ---- IlClub UI elements*/
+
+/*Utility*/
+.flex {
+    display: flex;
+}
+.flexGrow {
+    flex-grow: 1;
+}
+.flexWrap {
+    flex-wrap: wrap;
+}
+.widthLayoutRoule{
+    width: var(--margin-layout);    
+}
+.width10{
+    width: 10%;    
+}
+.width35{
+    width: 35%;    
+}
+.width60{
+    width: 60%;
+}
+.width50{
+    width: 50%;
+}
+.width100{
+    width: 100%;
+}
+.texCenter{
+    text-align: center;
+}
+.contentCenter {
+	margin: 0 auto auto auto;
+}
+.contentVerticalCenter {
+	margin: auto 0;
+}
+.textJustified{
+    text-align: justify;    
+    text-justify: inter-word;
+}
+.lineMargin{
+    margin-top: 8px;
+}
+.halfLineMargin{
+    margin-top: 4px;
+}
+.lineIcon{
+    height: 1rem;
+}
+.overflow{
+    overflow: hidden;
+}
+.floatLeft{
+    float:left;
+}
+.floatRight{
+    float: right;
+}
+.paddingLayoutRoule {
+    padding: var(--margin-layout);
+}
+.paddingHalfLayoutRoule {
+    padding: var(--half-margin-layout);
+}
+.whiteFont{
+    color: white;
+}
+/*End Utility*/
+
+/*desktop margin 24px*/
+/*
+@media only screen and (min-width: 800px) {
+	.header {
+		
+    padding: 0.5rem 24px 0.5rem 24px;
+	}
+}
+*/
+@media only screen and (min-width: 500px) {
+    #menuNav {
+      -webkit-transform: translate(-300px);
+      transform: translateX(-300px);
+    }
+}
+@media only screen and (min-width: 800px) {
+    #menuNav {
+      -webkit-transform: translate(0);
+      transform: translateX(0);
+      position: static;      
+      /*fisso sulla sinistra*/      
+    }
+    #menuButton{
+        display: none;
+    }
+    :root {
+        --margin-layout: 24px;
+        --negative-margin-layout: -24px;
+    }
+}
+/*Desktop*/
+@media only screen and (min-width: 1000px) {
+    #menuNav {
+        -webkit-transform: translate(-300px);
+        transform: translateX(-300px);
+        position: fixed;
+        /*scorrimento da sinistra*/
+    }
+    #menuButton{
+        display: block;
+    }
+}
+/*2K TV*/
+@media only screen and (min-width: 1440px) {
+        #menuNav {
+            -webkit-transform: translate(0);
+            transform: translateX(0);
+            position: static;
+            /*fisso sulla sinistra*/
+        }
+        #menuButton{
+            display: none;
+        }
+}
+/*2K TV*/
+@media only screen and (min-width: 2500px) {
+    body, html {          
+        font-size: 26px;
+    }
+}
