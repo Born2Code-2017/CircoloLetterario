@@ -80,13 +80,13 @@ main{
   box-shadow: none;
 }
 .calendarIcon{
-  background-image: url("res/calendar-white.svg");
+  background-image: url("assets/calendar-white.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50%;
 }
 .newIcon{
-  background-image: url("res/new.svg");
+  background-image: url("assets/new.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50%;
@@ -95,7 +95,7 @@ main{
 .cardImg {
   width: 100%;
   height: 8rem;
-  background: url("res/gogol_1.jpg") no-repeat;
+  background: url("assets/gogol_1.jpg") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -132,7 +132,7 @@ main{
   border-radius: 50%;
   border:0px;
   background-color: var(--ilClub-red);
-  background-image: url("res/bookmark.svg");
+  background-image: url("assets/bookmark.svg");
   background-position: center;
   background-repeat: no-repeat;
   right: var(--margin-layout);

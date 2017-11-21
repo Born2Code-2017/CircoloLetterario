@@ -20,7 +20,7 @@
   margin: 0 auto 0 auto;
   border-radius: 50%;
   border: 0.18rem white solid;
-  background: url("res/profile.jpg") no-repeat;
+  background: url("../../assets/profile.jpg") no-repeat;
   background-size: cover;
   background-position: center;
 }
