@@ -1,6 +1,9 @@
+///<reference path="../../node_modules/@angular/http/src/http_module.d.ts"/>
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
+import { routing } from './app.routes';
 
 import { AppComponent } from './app.component';
 import { PageHomeComponent } from './Pages/page-home/page-home.component';
@@ -9,14 +12,8 @@ import { PageNotfoundcomponentComponent } from './Pages/page-notfoundcomponent/p
 import { PageProfileComponent } from './Pages/page-profile/page-profile.component';
 import { HeaderComponent } from './header/header.component';
 import { SideMenuComponent } from './sidemenu/sidemenu.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
-const appRoutes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'home', component: PageHomeComponent },
-  { path: 'new event', component: PageNeweventComponent },
-  { path: 'profile', component: PageProfileComponent},
-  { path: '**', component: PageNotfoundcomponentComponent }
-];
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,11 +22,14 @@ const appRoutes: Routes = [
     PageNotfoundcomponentComponent,
     PageProfileComponent,
     HeaderComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    FormsModule,
+    HttpModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]

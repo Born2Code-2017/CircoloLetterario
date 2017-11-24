@@ -56,7 +56,6 @@ main{
   flex-grow: 1;
 }
 
-
 /*IlClub UI elements*/
 .squareButton{
   height: 2.7rem;
@@ -96,6 +95,16 @@ main{
   background: url("assets/gogol_1.jpg") no-repeat;
   background-size: cover;
   background-position: center;
+}
+.cardForm{
+  position: relative;
+  padding: var(--margin-layout, 16px);
+  padding-top: var(--half-margin-layout, 8px);
+  margin: var(--margin-layout, 16px);
+  margin-top: var(--negative-margin-layout, -16px);
+  background: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.13), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
+  transition: margin 0.2s ease-in;
 }
 .cardDetail{
   position: relative;

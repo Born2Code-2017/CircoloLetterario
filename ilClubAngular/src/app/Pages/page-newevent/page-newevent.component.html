@@ -1,3 +1,56 @@
-<p>
-  page-newevent works!
-</p>
+<form id="newEventForm" novalidate>
+  <div class="pageTitle">
+    <input class="roundButton" type="button">
+  </div>
+  <div class="cardForm">
+    <label for="nome_evento">Nome dell'evento</label>
+    <input id="nome_evento" type="text" value="{{currentEvent?.titolo}}">
+    <div>
+      <label for="libreria">Scegli libreria</label>
+      <select [(ngModel)]="currentEvent.sede" id="libreria" name="libreria">
+        <option value="Libreria Ostia">Libreria Ostia</option>
+        <option value="Libreria Ostia 1">Libreria Ostia 1</option>
+        <option value="Libreria Ostia 2">Libreria Ostia 2</option>
+        <option value="Libreria Ostia 3">Libreria Ostia 3</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="data">Data</label>
+      <input [(ngModel)]="currentEvent.data"
+             id="data" name="data" type="date" placeholder="gg/mm/aaaa"><br>
+    </div>
+
+    <div>
+      <label for="ora">Ora</label>
+      <input [(ngModel)]="currentEvent.ora" type="time"
+             id="ora" name="ora" placeholder="hh:mm">
+    </div>
+
+    <!-- Terza riga -->
+    <div>
+      <label for="descrizione">Descrizione</label>
+      <textarea [(ngModel)]="currentEvent.descrizione"
+                rows="5" id="descrizione" name="descrizione"
+                placeholder="Descrizione evento..."> </textarea>
+    </div>
+    <div>
+      <label for="imgUrl">Scegli immagine</label>
+      <select [(ngModel)]="currentEvent.immagine" id="imgUrl" name="imgUrl">
+        <!-- <option value="">scegli</option> -->
+        <option value="default">default</option>
+        <option value="path-0">barman</option>
+        <option value="path-1">cuoco</option>
+        <option value="path-2">faggiani</option>
+        <option value="path-3">gruppo</option>
+        <option value="path-4">libreria</option>
+      </select>
+    </div>
+    <!-- Quarta riga -->
+  </div>
+  <div class="flex paddingLayoutRoule">
+    <input class="flexGrow squareButton" type="button" (click)="cancel()" value="❮  cancella">
+    <div class="widthLayoutRoule"></div>
+    <input class="flexGrow squareButton" type="button" (click)="save()" value="salva">
+  </div>
+</form>
