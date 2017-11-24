@@ -7,9 +7,11 @@ import { PageHomeComponent } from './Pages/page-home/page-home.component';
 import { PageNeweventComponent } from './Pages/page-newevent/page-newevent.component';
 import { PageNotfoundcomponentComponent } from './Pages/page-notfoundcomponent/page-notfoundcomponent.component';
 import { PageProfileComponent } from './Pages/page-profile/page-profile.component';
+import { HeaderComponent } from './header/header.component';
+import { SideMenuComponent } from './sidemenu/sidemenu.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: 'home'},
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: PageHomeComponent },
   { path: 'new event', component: PageNeweventComponent },
   { path: 'profile', component: PageProfileComponent},
@@ -21,7 +23,9 @@ const appRoutes: Routes = [
     PageHomeComponent,
     PageNeweventComponent,
     PageNotfoundcomponentComponent,
-    PageProfileComponent
+    PageProfileComponent,
+    HeaderComponent,
+    SideMenuComponent
   ],
   imports: [
     BrowserModule,
