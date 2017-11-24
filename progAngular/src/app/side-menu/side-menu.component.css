@@ -1,3 +1,11 @@
+:root {
+  --margin-layout: 16px;
+  --half-margin-layout: 8px;
+  --negative-margin-layout: -16px;
+  --ilClub-red: #B30000;
+  --ilClub-darkGray : rgb(78, 78, 78);
+}
+
 #menuNav {
   width: 300px;
   height: 100%;
