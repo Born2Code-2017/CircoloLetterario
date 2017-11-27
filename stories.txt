@@ -1,0 +1,44 @@
+----------   PAGINA HOME     --------------------
+
+STORIA 1
+-TITOLO: come utente, voglio visualizzare la lista di eventi per sapere a quali eventi parteciperò
+-DIMOSTRAZIONE: accedo a localhost:4200/home e visualizzo gli eventi a cui parteciperò in ordine cronologico.
+-PUNTI: 2
+
+
+STORIA 4
+-TITOLO: come utente, voglio filtrare gli eventi per data per sapere gli eventi in programma a partire da un dato giorno
+-DIMOSTRAZIONE: come utente, cliccando su un giorno specifico, viene visualizzata la lista degli eventi a partire dal giorno selezionato.
+-PUNTI: 2
+
+
+
+--------------------       PAGINA NUOVO EVENTO        -----------------------
+
+STORIA 1
+-TITOLO: come utente, voglio creare un nuovo evento per condividere interessi
+-DIMOSTRAZIONE: accedo a localhost:4200/new visualizzo il form per la compilazione o uno stub. Cliccando su 'invia' creo l'evento sul database remoto e visualizzo un popup di successo e torno nella home.  
+-PUNTI: 4
+-OWNER: Alessia
+
+
+STORIA 2
+-TITOLO: come utente, voglio annullare la creazione di un nuovo evento in caso di errore o ripensamenti
+-DIMOSTRAZIONE: accedo a localhost:4200/new e visualizzo il form per la compilazione o uno stub.
+ Cliccando su 'cancella' annullo la creazione dell'evento e torno alla home. 
+-PUNTI: 2
+-OWNER: Alessia
+
+
+STORIA 3
+-TITOLO: come utente, voglio creare un nuovo evento per condividere interessi mediante una user experience moderna
+-DIMOSTRAZIONE: accedo a localhost:4200/new e viasualizzo un form responsive per utilizzo da tablet e telefonino esteticamente moderno con i seguenti campi 
+ 	Titolo, 
+	Sede Libreria 
+	Data, 
+	Ora, 
+	Immagine 
+	Descrizione.
+-PUNTI: 4
+-OWNER: Luca, Alessia
+

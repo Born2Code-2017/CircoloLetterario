@@ -4,7 +4,7 @@
   </div>
   <div class="cardForm">
     <label for="nome_evento">Nome dell'evento</label>
-    <input id="nome_evento" type="text" value="{{currentEvent?.titolo}}">
+    <input id="nome_evento" name="nome_evento" type="text" [(ngModel)]="currentEvent.titolo">
     <div>
       <label for="libreria">Scegli libreria</label>
       <select [(ngModel)]="currentEvent.sede" id="libreria" name="libreria">
@@ -38,7 +38,7 @@
       <label for="imgUrl">Tipologia evento</label>
       <select [(ngModel)]="currentEvent.immagine" id="imgUrl" name="imgUrl">
         <!-- <option value="">scegli</option> -->
-        <option value="../../../assets/EventDefault.jpg" name="default" selected>generale</option>
+        <option value="../../../assets/EventDefault.jpg" name="generale" selected>generale</option>
         <option value="path-0" name="barman">barman</option>
         <option value="path-1" name="cuoco">cuoco</option>
         <option value="path-2" name="gruppo">gruppo</option>
