@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
+import {Event} from '../models/event';
+import {FirebaseService} from '../firebase.service';
 
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css']
 })
-export class CalendarComponent implements OnInit {
+export class CalendarComponent {
 
-  constructor() { }
+  constructor(private service: FirebaseService) {
+  }
 
-  ngOnInit() {
+  showDay(num: number) {
+    this.service.clickedDay.emit(num);
   }
 
 }

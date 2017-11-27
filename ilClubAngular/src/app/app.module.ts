@@ -15,6 +15,7 @@ import {CalendarComponent} from './calendar/calendar.component';
 import {PageLoginComponent} from './Pages/page-login/page-login.component';
 import {FirebaseService} from './firebase.service';
 import {NewEventGuard} from './Pages/page-newevent/newevent.guard';
+import { EventListComponent } from './event-list/event-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {NewEventGuard} from './Pages/page-newevent/newevent.guard';
     HeaderComponent,
     SideMenuComponent,
     CalendarComponent,
-    PageLoginComponent
+    PageLoginComponent,
+    EventListComponent
   ],
   imports: [
     BrowserModule,

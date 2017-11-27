@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import {Injectable, EventEmitter} from '@angular/core';
+import {Http, Response} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Event} from './models/event';
 
@@ -7,6 +7,7 @@ import {Event} from './models/event';
 @Injectable()
 export class FirebaseService {
 
+  public clickedDay = new EventEmitter<number>();
   private apiUrl: string;
   private http: Http;
 
@@ -18,26 +19,27 @@ export class FirebaseService {
   public getData(data: string) {
     return this.http.get(this.apiUrl + data)
       .map((res: Response) => res.json());
+
   }
 
-  public getEvent(data: string, id: number) {
-    return this.http.get(this.apiUrl + 'Eventi.json/' + id)
-      .map((response: Response) => response.json());
+  public getEvent(id: number) {
+    return this.http.get(this.apiUrl + 'Eventi.json/' + id).map((response: Response) => response.json());
   }
 
   public createEvent(event: Event) {
-    return this.http.post(this.apiUrl + 'Eventi.json', event)
-      .map((response: Response) => response.json());
+    return this.http.post(this.apiUrl + 'Eventi.json', event).map((response: Response) => response.json());
   }
 
-  public deleteEvent(id: string) {
-    return this.http.delete(this.apiUrl + 'Eventi.json/' + id)
-      .map((response: Response) => response.json());
+  public emptyEvent(key: string, event: Event) {
+    return this.http.put(this.apiUrl + 'Eventi/' + key + '.json', event).map((response: Response) => response.json());
   }
 
-  public editEvent(id: string, event: Event) {
-    return this.http.put(this.apiUrl + 'Eventi.json/' + id, event)
-      .map((response: Response) => response.json());
+  public deleteEvent(key: string) {
+    return this.http.delete(this.apiUrl + 'Eventi/' + key).map((response: Response) => response.json());
+  }
+
+  public editEvent(key: string, event: Event) {
+    return this.http.put(this.apiUrl + 'Eventi/' + key, event).map((response: Response) => response.json());
   }
 
 }
