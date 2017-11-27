@@ -13,6 +13,7 @@ import { PageProfileComponent } from './Pages/page-profile/page-profile.componen
 import { HeaderComponent } from './header/header.component';
 import { SideMenuComponent } from './sidemenu/sidemenu.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { PageLoginComponent } from './Pages/page-login/page-login.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CalendarComponent } from './calendar/calendar.component';
     PageProfileComponent,
     HeaderComponent,
     SideMenuComponent,
-    CalendarComponent
+    CalendarComponent,
+    PageLoginComponent
   ],
   imports: [
     BrowserModule,

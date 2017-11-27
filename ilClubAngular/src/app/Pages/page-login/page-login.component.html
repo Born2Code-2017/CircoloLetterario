@@ -1,0 +1,18 @@
+<div class="backgroundImage paddingLayoutRoule">
+  <div class="paddingLayoutRoule lightGrayBackground">
+    <form #loginForm="ngForm">
+      <h2>LOGIN</h2>
+      <label for="username">Username:</label>
+      <input type="text" name="username" required [(ngModel)]="utente">
+
+      <label for="password">Password:</label>
+      <input type="password" name="password" required [(ngModel)]="password">
+      <!--<p [ngStyle]="{'visibility': loginForm.valid ? 'hidden' : 'visible'}">-->
+      <p class=" lineMargin paddingHalfLayoutRoule errorLabel" [ngStyle]="{'visibility': loginError ? 'visible' : 'hidden'}">
+        <span><strong>Invalid username or/and password.</strong></span>
+      </p>
+      <input class="lineMargin squareButton redButton" type="button" value="Login"
+             [disabled]="!loginForm.valid || loginForm.pristine" (click)="login()">
+    </form>
+  </div>
+</div>

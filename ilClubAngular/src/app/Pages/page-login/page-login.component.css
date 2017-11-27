@@ -1,0 +1,13 @@
+.backgroundImage{
+  background: url("../../../assets/loginBkg.jpg") no-repeat top center;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+.errorLabel{
+  background-color: rgb(179, 58, 58);
+  color: white;
+}
+.loginContainter{
+  margin: 0
+}
