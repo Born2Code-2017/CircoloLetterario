@@ -1,9 +1,8 @@
 import { Component} from '@angular/core';
-import {User} from '../../models/user';
-import {Event} from '../../models/event';
-import {FirebaseService} from '../../firebase.service';
-import {Router } from '@angular/router';
-import * as _ from 'lodash';
+import { User} from '../../models/user';
+import { Event} from '../../models/event';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FirebaseService } from '../../firebase.service';
 
 @Component({
   selector: 'app-page-newevent',
@@ -11,23 +10,30 @@ import * as _ from 'lodash';
   styleUrls: ['./page-newevent.component.css'],
   providers: [FirebaseService]
 })
+
 export class PageNeweventComponent {
   currentEvent: Event;
-
+  onCancel: boolean;
   onSuccess: string;
   onError: string;
-  constructor(private router: Router, private service: FirebaseService) {
+
+  constructor(private router: Router, 
+    activatedRoute: ActivatedRoute, 
+    private service: FirebaseService
+  ) {
     this.currentEvent = new Event;
     this.currentEvent.sede = 'Libreria Ostia';
-    this.currentEvent.immagine = 'default';
+    this.currentEvent.immagine = 'generale';
     this.currentEvent.owner = 'utente loggato';
   }
 
   cancel() {
+    this.onCancel = true;
     this.router.navigateByUrl('/home');
   }
 
   save() {
+    this.onCancel = false;
     this.service.createEvent(this.currentEvent)
       .subscribe(
         arg => {
@@ -37,6 +43,7 @@ export class PageNeweventComponent {
         },
         err => {
           this.onError = 'errore nel salvataggio';
+          console.log(this.onError);
         }
       );
   }

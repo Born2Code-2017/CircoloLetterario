@@ -1,8 +1,8 @@
-///<reference path="../../node_modules/@angular/http/src/http_module.d.ts"/>
+// <reference path="../../node_modules/@angular/http/src/http_module.d.ts"/>
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { routing } from './app.routes';
 
 import { AppComponent } from './app.component';
@@ -13,6 +13,8 @@ import { PageProfileComponent } from './Pages/page-profile/page-profile.componen
 import { HeaderComponent } from './header/header.component';
 import { SideMenuComponent } from './sidemenu/sidemenu.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { FirebaseService } from './firebase.service';
+import { NewEventGuard } from './Pages/page-newevent/newevent.guard';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,10 @@ import { CalendarComponent } from './calendar/calendar.component';
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [
+    FirebaseService,
+    NewEventGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
