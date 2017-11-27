@@ -17,7 +17,7 @@ const appRoutes: Routes = [
     component: PageHomeComponent
   },
   {
-    path: 'new',
+    path: 'new event',
     component: PageNeweventComponent,
     canDeactivate: [NewEventGuard]
   },

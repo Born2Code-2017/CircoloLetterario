@@ -3,6 +3,9 @@
   background-size: cover;
   height: 100vh;
   width: 100vw;
+  /*delete the following 2 line*/
+  position: absolute;
+  top: 0;
 }
 .errorLabel{
   background-color: rgb(179, 58, 58);

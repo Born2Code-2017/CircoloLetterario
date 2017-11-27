@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-page-login',
@@ -9,10 +9,17 @@ export class PageLoginComponent implements OnInit {
   utente: string;
   password: string;
   loginError = false;
-  constructor() { }
-  login() {
-    this.loginError = true;
+  loginDone = false;
+
+  constructor() {
   }
+
+  login() {
+    this.loginError = false;
+    this.loginDone = true;
+    console.log('loginDone: ' + this.loginDone);
+  }
+
   ngOnInit() {
   }
 

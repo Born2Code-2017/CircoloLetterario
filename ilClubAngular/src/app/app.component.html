@@ -1,16 +1,15 @@
-<!--<app-header></app-header>-->
-<!--<div class="page">-->
-  <!--<app-sidemenu></app-sidemenu>-->
-  <!--<main>-->
-    <!--&lt;!&ndash;contenuto della pagina&ndash;&gt;-->
-    <!--<router-outlet></router-outlet>-->
-  <!--</main>-->
-<!--</div>-->
-
-<!--<nav>-->
-  <!--<a routerLink="/home" routerLinkActive="active">home</a>-->
-  <!--<a routerLink="/profile" routerLinkActive="active">profile</a>-->
-  <!--<a routerLink="/new event" routerLinkActive="active">new event</a>-->
-  <!--<a routerLink="/error" routerLinkActive="active">error</a>-->
-<!--</nav>-->
+<app-header></app-header>
+<div class="page">
+  <app-sidemenu></app-sidemenu>
+  <main>
+    <nav>
+      <a routerLink="/home" routerLinkActive="active">home</a>
+      <a routerLink="/profile" routerLinkActive="active">profile</a>
+      <a routerLink="/new event" routerLinkActive="active">new event</a>
+      <a routerLink="/error" routerLinkActive="active">error</a>
+    </nav>
+    <!--contenuto della pagina-->
+    <router-outlet></router-outlet>
+  </main>
+</div>
 <app-page-login></app-page-login>
