@@ -102,6 +102,7 @@ div.Calendario div.col-8 div.col-2:nth-child(13){
   border-radius: 50%;
 }
 
+
 .EventiUtente{
   width: 100%;
   margin: 2% 0;
@@ -119,8 +120,8 @@ div.EventiUtente div.col-9{
   padding: 0 5%;
 }
 div.EventiUtente div.col-3{
-  /*background-image: url("libreria3.jpg");*/
-  /*background-size: cover;*/
+  background-image: url("../../assets/EventDefault.jpg");
+  background-size: cover;
   height: 100%;
 }
 div.EventiUtente div.col-9 p{
