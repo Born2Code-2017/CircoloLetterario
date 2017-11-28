@@ -1,2 +1,2 @@
 <app-calendar></app-calendar>
-<app-event-list [eventsId]="userEvents"></app-event-list>
+<app-event-list *ngIf="idTaken" [eventsId]="userEvents"></app-event-list>

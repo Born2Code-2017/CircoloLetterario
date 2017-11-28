@@ -19,7 +19,13 @@ export class EventListComponent implements OnInit {
 
 
   constructor(private service: FirebaseService) {
-    this.loadList(13);
+    this.eventKeys = [];
+    this.eventList = [];
+    //this.eventsId = [];
+    if(this.eventsId != []){
+      this.loadList(13);
+    }
+    
   }
 
   ngOnInit() {
@@ -28,13 +34,13 @@ export class EventListComponent implements OnInit {
 
   loadList(day: number) {
 
-    this.eventKeys = [];
+    //this.eventKeys = [];
     // id egli eventi dell'utente
-    this.eventsId = [];
-    this.eventList = [];
+    //this.eventsId = [];
+    //this.eventList = [];
     this.service.getData('Eventi.json').subscribe(events => {
       for (const idx in events) {
-        if (this.eventsId.indexOf(events[idx].id) !== -1) {
+        if (this.eventsId && this.eventsId.indexOf(events[idx].id) !== -1) {
           this.eventList.push(events[idx]);
           this.eventKeys.push(idx);
           // console.log(i);
