@@ -13,6 +13,7 @@ export class PageHomeComponent {
   email = 'sandra.green@email.com';
   userList: User[];
   service: FirebaseService;
+  isCalendarVisible = false;
 
   @Output()
   userEvents: number[];
@@ -23,17 +24,16 @@ export class PageHomeComponent {
     this.idTaken = false;
     this.service = service;
     this.loadUsers();
-
   }
 
   loadUsers() {
     this.service.getData('Utenti.json').subscribe(users => {
       this.userList = [];
-      for (let idx in users) {
-        //console.log('utente');
-        //console.log(users[idx]);
+      for (const idx in users) {
+        // console.log('utente');
+        // console.log(users[idx]);
         this.userList.push(users[idx]);
-        //console.log(this.userList);
+        // console.log(this.userList);
       }
       this.findUser();
     });
@@ -45,15 +45,17 @@ export class PageHomeComponent {
       if (this.userList[idx].email === this.email) {
         this.currentUser = this.userList[idx];
         for (const eventId of this.userList[idx].eventi) {
-          //console.log(eventId);
+          // console.log(eventId);
           this.userEvents.push(eventId);
         }
-
       }
     }
     this.idTaken = true;
     console.log(this.userEvents);
   }
 
+  OpenCalendar() {
+    this.isCalendarVisible = true;
+  }
 
 }

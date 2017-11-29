@@ -1,6 +1,7 @@
 :root {
   --margin-layout: 16px;
   --half-margin-layout: 8px;
+  --double-margin-layout: 38px;
   --negative-margin-layout: -16px;
   --ilClub-red: #B30000;
   --ilClub-darkGray : rgb(78, 78, 78);
@@ -51,7 +52,7 @@ label, input, select, textarea {
   width: 100%;
   min-height: 2rem;
 }
-input, button {
+input, button, select{
   cursor: pointer;
   height: 2.7rem;
   padding: var(--half-margin-layout, 8px);
@@ -67,9 +68,14 @@ header {
   display: flex;
   position: fixed;
   top: 0;
+  z-index:10;
 }
-.page {
+.page{
+  height: 100vh;
+}
+.pageContent {
   padding-top: 3.4rem;
+  height: 100%;
   display: flex;
 }
 main{
@@ -83,13 +89,14 @@ main{
   font-weight: bold;
 }
 .roundButton{
-  position: absolute;
+  position: fixed;
   width: 3.3rem;
   height: 3.3rem;
   border-radius: 50%;
-  border:0px;
-  background-color: var(--ilClub-red, #B30000);
+  border:0;
+  z-index: 2;
   right: var(--margin-layout, 16px);
+  bottom: var(--double-margin-layout, 38px);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
 }
 .roundButton:hover{
@@ -255,6 +262,12 @@ main{
 }
 .lightGrayBackground{
   background: var(--ilClub-lightGray, rgb(241, 241, 241));
+}
+.hide{
+  visibility: hidden !important;
+}
+.show{
+  visibility: visible !important;
 }
 /*End Utility*/
 

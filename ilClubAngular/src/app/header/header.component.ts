@@ -14,7 +14,6 @@ export class HeaderComponent implements OnInit {
   menuClicked() {
     this.menuOpen = !this.menuOpen;
   }
-
   ngOnInit() {
   }
 

@@ -4,8 +4,9 @@
   height: 100vh;
   width: 100vw;
   /*delete the following 2 line*/
-  position: absolute;
+  position: fixed;
   top: 0;
+  z-index: 500;
 }
 .errorLabel{
   background-color: rgb(179, 58, 58);
