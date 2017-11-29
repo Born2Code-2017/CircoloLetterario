@@ -16,6 +16,7 @@ import {PageLoginComponent} from './Pages/page-login/page-login.component';
 import {FirebaseService} from './firebase.service';
 import {NewEventGuard} from './Pages/page-newevent/newevent.guard';
 import { EventListComponent } from './event-list/event-list.component';
+import {AppService} from './Services/app-service.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { EventListComponent } from './event-list/event-list.component';
   ],
   providers: [
     FirebaseService,
-    NewEventGuard
+    NewEventGuard,
+    AppService
   ],
   bootstrap: [AppComponent]
 })

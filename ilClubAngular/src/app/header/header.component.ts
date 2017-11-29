@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {AppService} from '../Services/app-service.service';
 
 @Component({
   selector: 'app-header',
@@ -6,15 +7,24 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  menuOpen = false;
+  isMenuOpen: boolean;
 
-  constructor() {
+  constructor(private appService: AppService) {
+    this.isMenuOpen = false;
+  }
+
+  ngOnInit() {
+    this.getIsMenuOpen();
+  }
+
+  getIsMenuOpen(): void {
+    this.appService.getIsMenuOpen().subscribe(isMenuOpen => {
+      console.log('HEADER getIsMenuOpen: ' + isMenuOpen);
+      this.isMenuOpen = isMenuOpen;
+    });
   }
 
   menuClicked() {
-    this.menuOpen = !this.menuOpen;
+    this.appService.setIsMenuOpen(!this.isMenuOpen);
   }
-  ngOnInit() {
-  }
-
 }

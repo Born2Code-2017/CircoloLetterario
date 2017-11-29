@@ -1,4 +1,5 @@
-<app-calendar [(ngModel)]="isCalendarVisible"  ngDefaultControl ></app-calendar>
+<app-calendar [isCalendarVisible]="isCalendarVisible" (calendarVisibleChange)="isCalendarVisible = $event" ngDefaultControl ></app-calendar>
+valore calendar home: {{isCalendarVisible}}
 <app-event-list *ngIf="idTaken" [eventsId]="userEvents"></app-event-list>
 <button id="calendarButton" [ngClass]="isCalendarVisible? 'hide': 'show'" class="roundButton redButton" (click)="OpenCalendar()">
 </button>

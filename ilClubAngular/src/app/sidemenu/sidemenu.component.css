@@ -10,9 +10,9 @@
   transition: transform 0.2s ease-in;
   z-index: 500;
 }
-#menuNav.change1 {
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
+.change1 {
+  -webkit-transform: translateX(0) !important;
+  transform: translateX(0) !important;
 }
 .profileImg {
   width: 9rem;

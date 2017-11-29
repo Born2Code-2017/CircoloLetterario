@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {FirebaseService} from '../firebase.service';
 
 @Component({
@@ -12,8 +12,9 @@ export class CalendarComponent {
   calendario: any;
 
   @Input() isCalendarVisible: boolean;
-
+  @Output() calendarVisibleChange: EventEmitter<boolean>;
   constructor(private service: FirebaseService) {
+    this.calendarVisibleChange = new EventEmitter<boolean>();
     for (let i = 1; i < 31; i++) {
       this.dayOfMouth.push(i);
     }
@@ -21,10 +22,12 @@ export class CalendarComponent {
 
   show() {
     this.isCalendarVisible = true;
+    this.calendarVisibleChange.emit(this.isCalendarVisible);
   }
 
   hide() {
     this.isCalendarVisible = false;
+    this.calendarVisibleChange.emit(this.isCalendarVisible);
   }
 
   showDay() {
