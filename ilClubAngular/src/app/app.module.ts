@@ -14,6 +14,7 @@ import {SideMenuComponent} from './sidemenu/sidemenu.component';
 import {CalendarComponent} from './calendar/calendar.component';
 import {PageLoginComponent} from './Pages/page-login/page-login.component';
 import {FirebaseService} from './firebase.service';
+import {UserService} from './user.service';
 import {NewEventGuard} from './Pages/page-newevent/newevent.guard';
 import { EventListComponent } from './event-list/event-list.component';
 import {AppService} from './Services/app-service.service';
@@ -39,6 +40,7 @@ import {AppService} from './Services/app-service.service';
   ],
   providers: [
     FirebaseService,
+    UserService,
     NewEventGuard,
     AppService
   ],

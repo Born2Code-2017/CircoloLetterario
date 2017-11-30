@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AppService} from '../Services/app-service.service';
+import { User } from '../models/user';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-header',
@@ -8,12 +10,15 @@ import {AppService} from '../Services/app-service.service';
 })
 export class HeaderComponent implements OnInit {
   isMenuOpen: boolean;
+  userEmail: string;
 
-  constructor(private appService: AppService) {
+  constructor(private appService: AppService,  private serviceUser: UserService) {
     this.isMenuOpen = false;
+    //this.userEmail = localStorage.getItem('email');
   }
 
   ngOnInit() {
+    //this.serviceUser.setEmail(this.userEmail); 
     this.getIsMenuOpen();
   }
 

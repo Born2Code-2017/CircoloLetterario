@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FirebaseService} from '../firebase.service';
 import {Event} from '../models/event';
+import {Router, ActivatedRoute} from '@angular/router';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-event-list',
@@ -13,17 +15,16 @@ export class EventListComponent implements OnInit {
   eventKeys: string[];
 
   @Input()
-  eventsId: number[];
+  eventsId: string[];
 
   showEvents: Event[];
 
 
-  constructor(private service: FirebaseService) {
-    this.eventKeys = [];
-    this.eventList = [];
+  constructor(private router: Router, activatedRoute: ActivatedRoute, private service: FirebaseService) {
+    
     //this.eventsId = [];
     if(this.eventsId != []){
-      this.loadList(13);
+      this.loadList(1);
     }
     
   }
@@ -33,24 +34,35 @@ export class EventListComponent implements OnInit {
   }
 
   loadList(day: number) {
-
-    //this.eventKeys = [];
-    // id egli eventi dell'utente
-    //this.eventsId = [];
-    //this.eventList = [];
+    
+    this.eventKeys = [];
+    this.eventList = [];
+    console.log('load');
+    
     this.service.getData('Eventi.json').subscribe(events => {
       for (const idx in events) {
-        if (this.eventsId && this.eventsId.indexOf(events[idx].id) !== -1) {
-          this.eventList.push(events[idx]);
-          this.eventKeys.push(idx);
+        if (events[idx].owner ==='sandra.green@email.com' || this.eventsId && this.eventsId.indexOf(idx) !== -1) {
+          var event={
+            key: idx,
+            data: events[idx].data,
+            id:events[idx].id,
+            descrizione: events[idx].descrizione,
+            immagine: events[idx].immagine,
+            ora: events[idx].ora,
+            owner: events[idx].owner,
+            partecipanti: events[idx].partecipanti,
+            sede: events[idx].sede,
+            titolo: events[idx].titolo
+          }
+          this.eventList.push(event);
+          //this.eventKeys.push(idx);
           // console.log(i);
         }
       }
       console.log('------------');
+      this.eventList = _.sortBy(this.eventList, e => e.data);
       this.showList(day); // giorno odierno
     });
-
-
   }
 
   showList(selectedDay: number) {
@@ -59,31 +71,42 @@ export class EventListComponent implements OnInit {
     for (const event of this.eventList) {
        const dayNumber = (event.data.split('-'))[2];
 
-      if (parseInt(dayNumber, 10) >= selectedDay) {
+      if(parseFloat(dayNumber) >= selectedDay){
         // console.log(idx);
         this.showEvents.push(event);
+        
         // console.log(this.eventList[idx]);
         // console.log("giorno: "+numero);
       }
     }
-
   }
 
-  showEvent(id: number) {
-    console.log(id);
-    for (const eventidx in this.eventList) {
-      if (this.eventList[eventidx].id === id) {
-
-        // chiave evento
-        const eventKey = this.eventKeys[eventidx];
-        console.log(eventKey);
-
-        this.service.emptyEvent(eventKey, new Event()).subscribe(arg => {
-          console.log('eliminato');
-        });
+  //tasto cancella, occhio a id / key
+  deleteEvent(key: string) {
+    if(window.confirm('sicuro di voler cancellare?')){
+      for (const eventidx in this.eventList) {
+        
+        if (this.eventList[eventidx].owner === 'sandra.green@email.com' && this.eventList[eventidx].key === key) {
+          //chiave evento
+          console.log(key);
+          console.log(eventidx);
+          //this.eventList.splice(parseInt(eventidx),1);
+  
+          this.service.deleteEvent(key).subscribe(arg => {
+            console.log('eliminato');
+            // this.router.navigateByUrl('/home');
+            this.loadList(1);
+          });  
+          
+        }
       }
     }
-    this.loadList(13);
+    //console.log(key);
+    //this.loadList(1);
+  }
+
+  editEvent(key: string){
+    this.router.navigateByUrl('/new-event/'+key);
   }
 
 }

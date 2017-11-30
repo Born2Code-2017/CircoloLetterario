@@ -1,8 +1,8 @@
-<form novalidate>
+<form novalidate *ngIf='show'>
   <div class="pageTitle" [style.background-image]="'url('+currentEvent.immagine+')'">
 
   </div>
-  <div class="cardForm">
+  <div class="cardForm" *ngIf='show'>
     <label for="nome_evento">Nome dell'evento</label>
     <input id="nome_evento" name="nome_evento" type="text" [(ngModel)]="currentEvent.titolo">
     <div>
@@ -38,12 +38,12 @@
       <label for="imgUrl">Tipologia evento</label>
       <select [(ngModel)]="currentEvent.immagine" id="imgUrl" name="imgUrl">
         <!-- <option value="">scegli</option> -->
-        <option value="../../../assets/EventDefault.jpg" name="generale" selected>generale</option>
-        <option value="path-0" name="barman">barman</option>
-        <option value="path-1" name="cuoco">cuoco</option>
-        <option value="path-2" name="gruppo">gruppo</option>
-        <option value="path-3" name="gruppo">gruppo</option>
-        <option value="path-4" name="libreria">libreria</option>
+        <option value="../../../assets/EventDefault.jpg" selected>generale</option>
+        <option value="../../../assets/EventDefault.jpg">barman</option>
+        <option value="../../../assets/EventDefault.jpg">cuoco</option>
+        <option value="../../../assets/EventDefault.jpg" >gruppo</option>
+        <option value="../../../assets/EventDefault.jpg" >gruppo</option>
+        <option value="../../../assets/EventDefault.jpg">libreria</option>
       </select>
     </div>
     <!-- Quarta riga -->

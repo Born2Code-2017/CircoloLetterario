@@ -5,7 +5,8 @@
       <p>{{evento.titolo}}</p><p>{{evento.data}}</p> <p>{{evento.sede}}</p>
     </div>
     <!--<div class='col-3' data-img='"+evento.immagine+"'></div>-->
-    <button (click)="showEvent(evento.id)">Cancella</button>
+    <button *ngIf="evento.owner === 'sandra.green@email.com'" (click)="deleteEvent(evento.key)">Cancella</button>
+    <button *ngIf="evento.owner === 'sandra.green@email.com'" (click)="editEvent(evento.key)">Modifica</button>
   </div>
 
 </div>

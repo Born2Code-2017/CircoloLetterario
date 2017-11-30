@@ -1,14 +1,14 @@
-import {Component, Output} from '@angular/core';
+import { Component, Output, OnInit } from '@angular/core';
 import {FirebaseService} from '../../firebase.service';
 import {User} from '../../models/user';
+import { UserService } from '../../user.service';
 
 @Component({
   selector: 'app-page-home',
   templateUrl: './page-home.component.html',
-  styleUrls: ['./page-home.component.css'],
-  providers: [FirebaseService]
+  styleUrls: ['./page-home.component.css']
 })
-export class PageHomeComponent {
+export class PageHomeComponent{
   currentUser: User;
   email = 'sandra.green@email.com';
   userList: User[];
@@ -16,17 +16,18 @@ export class PageHomeComponent {
   isCalendarVisible = false;
 
   @Output()
-  userEvents: number[];
+  userEvents: string[];
 
   idTaken: boolean;
 
-  constructor(service: FirebaseService) {
+  constructor(service: FirebaseService, private userService: UserService) {
     this.idTaken = false;
     this.service = service;
     this.loadUsers();
   }
 
   loadUsers() {
+    
     this.service.getData('Utenti.json').subscribe(users => {
       this.userList = [];
       for (const idx in users) {
@@ -44,10 +45,11 @@ export class PageHomeComponent {
     for (const idx in this.userList) {
       if (this.userList[idx].email === this.email) {
         this.currentUser = this.userList[idx];
-        for (const eventId of this.userList[idx].eventi) {
-          // console.log(eventId);
+        for (let eventId in this.currentUser.eventi) {
+          console.log('chiavi eventi '+eventId);
           this.userEvents.push(eventId);
         }
+
       }
     }
     this.idTaken = true;
