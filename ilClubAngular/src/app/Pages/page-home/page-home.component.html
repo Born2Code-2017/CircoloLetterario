@@ -2,7 +2,7 @@
 <div class="blurable" [ngClass]="isCalendarOpen? 'blur' : 'focus'">
   <app-event-list *ngIf="idTaken" [eventsId]="userEvents"></app-event-list>
   <button id="calendarButton" [ngClass]="isCalendarOpen? 'hide': 'show'"
-          class="roundButton redButton" (click)="OpenCalendar()">
+          class="roundButton accentButton" (click)="OpenCalendar()">
   </button>
 
 </div>

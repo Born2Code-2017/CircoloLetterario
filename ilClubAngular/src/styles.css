@@ -7,12 +7,23 @@
   --ilClub-darkGray : rgb(78, 78, 78);
   --ilClub-lightGray: rgb(241, 241, 241)
 }
+* {
+  box-sizing: border-box;
+}
 img, embed, object, video{
   max-width: 100%;
 }
-button, input {
+button, input, nav a {
   min-width: 48px;
   min-height: 48px;
+}
+button,
+input[type=button]{
+  transition: all 0.3s ease-out;
+}
+button:hover,
+input[type=button]:hover {
+  font-size: 0.8rem;
 }
 button.disabled,
 button[disabled],
@@ -21,13 +32,11 @@ input[disabled]{
   cursor: not-allowed;
   opacity: .4;
 }
-* {
-  box-sizing: border-box;
-}
+
 body, html {
   margin: 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-family: 'EB Garamond', serif;
   background: var(--ilClub-lightGray, rgb(241, 241, 241));
 }
@@ -85,7 +94,7 @@ main{
 /*IlClub UI elements*/
 .squareButton{
   background-color: white;
-  border: 1px gray solid;
+  border: 2px white solid;
   font-weight: bold;
 }
 .roundButton{
@@ -182,9 +191,10 @@ main{
 .pageTitle * {
   margin: auto auto auto 0;
 }
-.redButton{
+.accentButton{
   background-color: var(--ilClub-red, #B30000);
   color: white;
+  border-color: var(--ilClub-red, #B30000);
 }
 /*End ---- Mobile event element*/
 /*End ---- IlClub UI elements*/
@@ -277,7 +287,7 @@ main{
   transition: filter 0.3s ease-in;
 }
 .blur {
-  filter: blur(2.5px);
+  filter: blur(2.5px) brightness(70%);
 }
 .focus {
   filter: none !important;

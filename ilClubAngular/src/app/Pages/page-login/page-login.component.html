@@ -11,7 +11,7 @@
       <p class=" lineMargin paddingHalfLayoutRoule errorLabel" [ngStyle]="{'visibility': loginError ? 'visible' : 'hidden'}">
         <span><strong>Invalid username or/and password.</strong></span>
       </p>
-      <input class="lineMargin squareButton redButton" type="button" value="Login"
+      <input class="lineMargin squareButton accentButton" type="button" value="Login"
              [disabled]="!loginForm.valid || loginForm.pristine" (click)="login()">
     </form>
   </div>
