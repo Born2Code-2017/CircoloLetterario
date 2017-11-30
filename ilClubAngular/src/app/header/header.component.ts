@@ -21,23 +21,17 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     // this.serviceUser.setEmail(this.userEmail);
-    this.getIsMenuOpen();
-    this.getIsCalendarOpen();
-  }
-
-  getIsCalendarOpen(): void {
     this.appService.getCalendarOpen().subscribe(calendarState => {
       this.isCalendarOpen = calendarState;
     });
-  }
-
-  getIsMenuOpen(): void {
     this.appService.getIsMenuOpen().subscribe(isMenuOpen => {
       console.log('HEADER getIsMenuOpen: ' + isMenuOpen);
       this.isMenuOpen = isMenuOpen;
     });
   }
-
+  closeSideMenu() {
+    this.appService.setIsMenuOpen(false);
+  }
   menuClicked() {
     this.appService.setIsMenuOpen(!this.isMenuOpen);
   }

@@ -17,7 +17,9 @@ export class SideMenuComponent implements OnInit {
     this.getIsMenuOpen();
     console.log('sei in init');
   }
-
+  close() {
+    this.appService.setIsMenuOpen(false);
+  }
   getIsMenuOpen(): void {
     console.log('SIDEMENU');
     this.appService.getIsMenuOpen().subscribe(isMenuOpen => {
