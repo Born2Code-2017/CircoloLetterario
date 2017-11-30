@@ -6,7 +6,8 @@ import { PageNeweventComponent } from './Pages/page-newevent/page-newevent.compo
 import { PageNotfoundcomponentComponent } from './Pages/page-notfoundcomponent/page-notfoundcomponent.component';
 import { PageProfileComponent } from './Pages/page-profile/page-profile.component';
 import { NewEventGuard } from './Pages/page-newevent/newevent.guard';
-const appRoutes: Routes = [
+import { PageLoginComponent } from './Pages/page-login/page-login.component';
+export const appRoutes: Routes = [
   {
     path: '',
     redirectTo: 'home',
@@ -17,7 +18,16 @@ const appRoutes: Routes = [
     component: PageHomeComponent
   },
   {
-    path: 'new event',
+    path: 'login',
+    component: PageLoginComponent 
+  },
+  {
+    path: 'new-event',
+    component: PageNeweventComponent,
+    canDeactivate: [NewEventGuard]
+  },
+  {
+    path: 'new-event/:key',
     component: PageNeweventComponent,
     canDeactivate: [NewEventGuard]
   },

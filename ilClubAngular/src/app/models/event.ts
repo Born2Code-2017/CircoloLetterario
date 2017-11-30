@@ -1,6 +1,7 @@
 export class Event {
-  id: number;
+  key: string;
   data: string;
+  id:number;
   descrizione: string;
   immagine: string;
   ora: string;

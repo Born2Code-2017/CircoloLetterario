@@ -22,24 +22,20 @@ export class FirebaseService {
 
   }
 
-  public getEvent(id: number) {
-    return this.http.get(this.apiUrl + 'Eventi.json/' + id).map((response: Response) => response.json());
+  public getEvent(key: string) {
+    return this.http.get(this.apiUrl + 'Eventi/' + key+'.json').map((response: Response) => response.json());
   }
 
   public createEvent(event: Event) {
     return this.http.post(this.apiUrl + 'Eventi.json', event).map((response: Response) => response.json());
   }
 
-  public emptyEvent(key: string, event: Event) {
-    return this.http.put(this.apiUrl + 'Eventi/' + key + '.json', event).map((response: Response) => response.json());
-  }
-
-  public deleteEvent(key: string) {
-    return this.http.delete(this.apiUrl + 'Eventi/' + key).map((response: Response) => response.json());
+  public deleteEvent(key: string){
+    return this.http.delete(this.apiUrl + 'Eventi/' + key + '.json').map((response: Response) => response.json());
   }
 
   public editEvent(key: string, event: Event) {
-    return this.http.put(this.apiUrl + 'Eventi/' + key, event).map((response: Response) => response.json());
+    return this.http.put(this.apiUrl + 'Eventi/' + key+'.json', event).map((response: Response) => response.json());
   }
 
 }
