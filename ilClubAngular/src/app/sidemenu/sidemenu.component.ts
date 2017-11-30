@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AppService} from '../Services/app-service.service';
+import { EventsHandler } from '../Services/eventsHandler.service';
 
 @Component({
   selector: 'app-sidemenu',
@@ -9,7 +9,7 @@ import {AppService} from '../Services/app-service.service';
 export class SideMenuComponent implements OnInit {
   isMenuOpen: boolean;
 
-  constructor(private appService: AppService) {
+  constructor(private appService: EventsHandler) {
     this.isMenuOpen = false;
   }
 

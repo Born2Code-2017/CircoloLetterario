@@ -1,5 +1,8 @@
-<app-calendar [isCalendarVisible]="isCalendarVisible" (calendarVisibleChange)="isCalendarVisible = $event" ngDefaultControl ></app-calendar>
-valore calendar home: {{isCalendarVisible}}
-<app-event-list *ngIf="idTaken" [eventsId]="userEvents"></app-event-list>
-<button id="calendarButton" [ngClass]="isCalendarVisible? 'hide': 'show'" class="roundButton redButton" (click)="OpenCalendar()">
-</button>
+<app-calendar></app-calendar>
+<div class="blurable" [ngClass]="isCalendarOpen? 'blur' : 'focus'">
+  <app-event-list *ngIf="idTaken" [eventsId]="userEvents"></app-event-list>
+  <button id="calendarButton" [ngClass]="isCalendarOpen? 'hide': 'show'"
+          class="roundButton redButton" (click)="OpenCalendar()">
+  </button>
+
+</div>

@@ -9,15 +9,11 @@
   display: flex;
   flex-flow: column;
   flex-wrap: wrap;
-  transition: all .6s ease;
-
-  background-color: transparent;
+  transition: transform .6s ease;
   -ms-transform: scale(0); /* IE 9 */
-  -webkit-transform: scale(0); /* Safari */
   transform: scale(0);
 }
 
-/*    filter: blur(2.5px);*/
 
 #Calendario > div:nth-child(2) {
   width: 100%;
@@ -64,13 +60,13 @@
 }
 
 .fadeOut {
-  background-color: transparent !important;
+  /*background-color: transparent !important;*/
   -ms-transform: scale(0) !important; /* IE 9 */
   -webkit-transform: scale(0) !important; /* Safari */
   transform: scale(0) !important;
 }
 .fadeIn {
-  background-color: rgba(0, 0, 0, 0.23) !important;
+  /*background-color: rgba(0, 0, 0, 0.23) !important;*/
   -ms-transform: scale(1) !important; /* IE 9 */
   -webkit-transform: scale(1) !important; /* Safari */
   transform: scale(1) !important;

@@ -269,6 +269,19 @@ main{
 .show{
   visibility: visible !important;
 }
+.boxShadow{
+  box-shadow: 0 0 10px #888888;
+}
+.blurable{
+  filter: none;
+  transition: filter 0.3s ease-in;
+}
+.blur {
+  filter: blur(2.5px);
+}
+.focus {
+  filter: none !important;
+}
 /*End Utility*/
 
 

@@ -1,6 +1,7 @@
-import {Component, Output} from '@angular/core';
+import {Component, Output, OnInit} from '@angular/core';
 import {FirebaseService} from '../../firebase.service';
 import {User} from '../../models/user';
+import { EventsHandler} from '../../Services/eventsHandler.service';
 
 @Component({
   selector: 'app-page-home',
@@ -8,24 +9,39 @@ import {User} from '../../models/user';
   styleUrls: ['./page-home.component.css'],
   providers: [FirebaseService]
 })
-export class PageHomeComponent {
+export class PageHomeComponent implements OnInit  {
   currentUser: User;
   email = 'sandra.green@email.com';
   userList: User[];
-  service: FirebaseService;
-  isCalendarVisible = false;
 
-  @Output()
-  userEvents: number[];
-
+  isCalendarOpen: boolean;
   idTaken: boolean;
 
-  constructor(service: FirebaseService) {
+  @Output() userEvents: number[];
+
+  constructor(private appService: EventsHandler, private service: FirebaseService) {
     this.idTaken = false;
-    this.service = service;
     this.loadUsers();
+    this.isCalendarOpen = false;
+  }
+  ngOnInit() {
+    console.log('1calendarState: ' + this.isCalendarOpen);
+    this.getIsCalendarOpen();
+  }
+  OpenCalendar() {
+    this.appService.setCalendarOpen(true);
+  }
+  getIsCalendarOpen(): void {
+    console.log('2calendarState: ' + this.isCalendarOpen);
+    this.appService.getCalendarOpen().subscribe(calendarState => {
+      console.log('3calendarState: ' + calendarState);
+      this.isCalendarOpen = calendarState;
+    });
   }
 
+  // menuClicked() {
+  //   this.appService.setIsMenuOpen(!this.isMenuOpen);
+  // }
   loadUsers() {
     this.service.getData('Utenti.json').subscribe(users => {
       this.userList = [];
@@ -54,8 +70,6 @@ export class PageHomeComponent {
     console.log(this.userEvents);
   }
 
-  OpenCalendar() {
-    this.isCalendarVisible = true;
-  }
+
 
 }

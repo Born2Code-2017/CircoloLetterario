@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AppService} from '../Services/app-service.service';
+import { EventsHandler } from '../Services/eventsHandler.service';
 
 @Component({
   selector: 'app-header',
@@ -8,15 +8,20 @@ import {AppService} from '../Services/app-service.service';
 })
 export class HeaderComponent implements OnInit {
   isMenuOpen: boolean;
-
-  constructor(private appService: AppService) {
+  isCalendarOpen: boolean;
+  constructor(private appService: EventsHandler) {
     this.isMenuOpen = false;
+    this.isCalendarOpen = false;
   }
-
   ngOnInit() {
     this.getIsMenuOpen();
+  this.getIsCalendarOpen();
   }
-
+  getIsCalendarOpen(): void {
+    this.appService.getCalendarOpen().subscribe(calendarState => {
+      this.isCalendarOpen = calendarState;
+    });
+  }
   getIsMenuOpen(): void {
     this.appService.getIsMenuOpen().subscribe(isMenuOpen => {
       console.log('HEADER getIsMenuOpen: ' + isMenuOpen);

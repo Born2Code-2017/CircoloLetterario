@@ -1,6 +1,6 @@
-<div #miotest id="Calendario" [ngClass]="isCalendarVisible ? 'fadeIn' : 'fadeOut'">
+<div #miotest id="Calendario" [ngClass]="isCalendarOpen ? 'fadeIn' : 'fadeOut'">
   <div class="flexGrow"></div>
-  <div>
+  <div class="boxShadow">
     <div class="calendarHeader">
       <h2 id="calendar_date">13 Aprile</h2>
     </div>
@@ -14,7 +14,7 @@
     </div>
 
     <div class="flex paddingLayoutRoule">
-      <input class="flexGrow squareButton" type="button" (click)="hide()" value="❮  cancella">
+      <input class="flexGrow squareButton" type="button" (click)="changeCalendarState(false)" value="❮  cancella">
       <div class="widthLayoutRoule"></div>
       <input class="flexGrow squareButton redButton" type="button" (click)="showDay()" value="seleziona">
     </div>

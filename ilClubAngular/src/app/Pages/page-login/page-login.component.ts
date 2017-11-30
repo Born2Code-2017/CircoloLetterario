@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {EventsHandler} from '../../Services/eventsHandler.service';
 
 @Component({
   selector: 'app-page-login',
@@ -14,13 +15,14 @@ export class PageLoginComponent implements OnInit {
   constructor() {
   }
 
+  ngOnInit() {
+  }
+
   login() {
     this.loginError = false;
     this.loginDone = true;
     console.log('loginDone: ' + this.loginDone);
   }
 
-  ngOnInit() {
-  }
 
 }

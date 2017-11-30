@@ -1,4 +1,4 @@
-<header>
+<header class="blurable" [ngClass]="isCalendarOpen? 'blur' : 'focus'">
   <div class="width35">
     <div id="menuButton" class="headerButton" [ngClass]="isMenuOpen ? 'change': '' " (click)="menuClicked()">
       <div id="barra1"></div>
