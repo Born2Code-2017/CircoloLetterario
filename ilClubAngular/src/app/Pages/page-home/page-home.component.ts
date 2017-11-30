@@ -26,7 +26,6 @@ export class PageHomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('1calendarState: ' + this.isCalendarOpen);
     this.getIsCalendarOpen();
   }
 
@@ -35,7 +34,6 @@ export class PageHomeComponent implements OnInit {
   }
 
   getIsCalendarOpen(): void {
-    console.log('2calendarState: ' + this.isCalendarOpen);
     this.appService.getCalendarOpen().subscribe(calendarState => {
       console.log('3calendarState: ' + calendarState);
       this.isCalendarOpen = calendarState;
