@@ -1,8 +1,12 @@
 <app-calendar></app-calendar>
 <div class="blurable" [ngClass]="isCalendarOpen? 'blur' : 'focus'">
   <app-event-list *ngIf="idTaken" [eventsId]="userEvents"></app-event-list>
-  <button id="calendarButton" [ngClass]="isCalendarOpen? 'hide': 'show'"
-          class="roundButton redButton" (click)="OpenCalendar()">
-  </button>
-
+  <div class="pageButtonsContainer">
+    <button [ngClass]="isCalendarOpen? 'hide': 'show'"
+            class="calendarIcon" (click)="OpenCalendar()">
+    </button>
+    <button routerLink="/new-event" class="newIcon" >
+    </button>
+  </div>
 </div>
+

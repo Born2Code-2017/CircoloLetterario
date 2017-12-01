@@ -7,13 +7,13 @@
     </div>
   </div>
 
-  <a routerLink="home" class="flexGrow texCenter headerButton">
+  <a routerLink="/home" class="flexGrow texCenter headerButton" (click)="closeSideMenu()">
     <h1>ilClub</h1>
   </a>
 
   <div class="width35 overflow">
-    <div routerLink="notifiche" id="notificationButton" class="headerButton floatRight">
-      <img src="../../assets/notifications-button.svg" alt="notification">
+    <div routerLink="notifiche" id="notificationButton" class="headerButton floatRight" (click)="closeSideMenu()">
+      <img src="./assets/notifications-button.svg" alt="notification">
     </div>
   </div>
 </header>

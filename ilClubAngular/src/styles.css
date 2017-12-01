@@ -5,7 +5,10 @@
   --negative-margin-layout: -16px;
   --ilClub-red: #B30000;
   --ilClub-darkGray : rgb(78, 78, 78);
-  --ilClub-lightGray: rgb(241, 241, 241)
+  --ilClub-lightGray: rgb(241, 241, 241);
+}
+* {
+  box-sizing: border-box;
 }
 img, embed, object, video{
   max-width: 100%;
@@ -14,6 +17,14 @@ button, input {
   min-width: 48px;
   min-height: 48px;
 }
+button,
+input[type=button]{
+  transition: all 0.3s ease-out;
+}
+button:hover,
+input[type=button]:hover {
+  font-size: 0.8rem;
+}
 button.disabled,
 button[disabled],
 input.disabled,
@@ -21,13 +32,11 @@ input[disabled]{
   cursor: not-allowed;
   opacity: .4;
 }
-* {
-  box-sizing: border-box;
-}
+
 body, html {
   margin: 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-family: 'EB Garamond', serif;
   background: var(--ilClub-lightGray, rgb(241, 241, 241));
 }
@@ -47,7 +56,7 @@ p, h3, h4 {
 a{
   text-decoration: none; color:white;
 }
-label, input, select, textarea {
+label, input, button, select, textarea {
   display: block;
   width: 100%;
   min-height: 2rem;
@@ -84,26 +93,38 @@ main{
 
 /*IlClub UI elements*/
 .squareButton{
-  background-color: white;
-  border: 1px gray solid;
+  background-color: var(--ilClub-lightGray, rgb(241, 241, 241));;
+  border: 0;
   font-weight: bold;
 }
-.roundButton{
+.pageButtonsContainer{
   position: fixed;
-  width: 3.3rem;
-  height: 3.3rem;
-  border-radius: 50%;
-  border:0;
-  z-index: 2;
   right: var(--margin-layout, 16px);
   bottom: var(--double-margin-layout, 38px);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }
-.roundButton:hover{
+
+.pageButtonsContainer>button{
+  width: 2.9rem;
+  height: 2.9rem;
+  margin-top: var(--margin-layout, 16px);
+  border-radius: 50%;
+  border:0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  background-color: white;
+  fill: black;
+}
+.pageButtonsContainer>button:hover{
   box-shadow: none;
 }
+.pageButtonsContainer>button:last-child{
+  width: 3.3rem;
+  height: 3.3rem;
+  background-color: var(--ilClub-red, #B30000);
+  color: white;
+}
 .calendarIcon{
-  background-image: url("assets/calendar-white.svg");
+  background-image: url("assets/calendar-black.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50%;
@@ -182,9 +203,10 @@ main{
 .pageTitle * {
   margin: auto auto auto 0;
 }
-.redButton{
+.accentButton{
   background-color: var(--ilClub-red, #B30000);
   color: white;
+  border-color: var(--ilClub-red, #B30000);
 }
 /*End ---- Mobile event element*/
 /*End ---- IlClub UI elements*/
@@ -277,7 +299,7 @@ main{
   transition: filter 0.3s ease-in;
 }
 .blur {
-  filter: blur(2.5px);
+  filter: blur(2.5px) brightness(70%);
 }
 .focus {
   filter: none !important;
