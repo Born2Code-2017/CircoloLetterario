@@ -79,6 +79,8 @@ export class EventListComponent implements OnInit {
         // console.log("giorno: "+numero);
       }
     }
+    console.log('this.showEvents caricato:' + this.showEvents);
+    console.log(this.showEvents);
   }
 
   // tasto cancella, occhio a id / key

@@ -6,7 +6,7 @@ export class Event {
   immagine: string;
   ora: string;
   owner: string;
-  partecipanti: number;
+  partecipanti: string;
   sede: string;
   titolo: string;
 }

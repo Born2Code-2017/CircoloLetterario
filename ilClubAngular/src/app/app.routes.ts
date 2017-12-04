@@ -15,29 +15,35 @@ export const appRoutes: Routes = [
   },
   {
     path: 'home',
-    component: PageHomeComponent
+    component: PageHomeComponent,
+    pathMatch: 'full'
   },
   {
     path: 'login',
-    component: PageLoginComponent 
+    component: PageLoginComponent,
+    pathMatch: 'full'
   },
   {
     path: 'new-event',
     component: PageNeweventComponent,
-    canDeactivate: [NewEventGuard]
+    canDeactivate: [NewEventGuard],
+    pathMatch: 'full'
   },
   {
     path: 'new-event/:key',
     component: PageNeweventComponent,
-    canDeactivate: [NewEventGuard]
+    canDeactivate: [NewEventGuard],
+    pathMatch: 'full'
   },
   {
     path: 'profile',
-    component: PageProfileComponent
+    component: PageProfileComponent,
+    pathMatch: 'full'
   },
   {
     path: '**',
-    component: PageNotfoundcomponentComponent
+    component: PageNotfoundcomponentComponent,
+    pathMatch: 'full'
   }
 ];
 

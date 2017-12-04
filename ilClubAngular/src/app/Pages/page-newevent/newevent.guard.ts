@@ -8,14 +8,17 @@ import {PageNeweventComponent} from './page-newevent.component';
 export class NewEventGuard implements CanDeactivate<PageNeweventComponent> {
   canDeactivate(component: PageNeweventComponent,
                 currentRoute: ActivatedRouteSnapshot,
-                currentState: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    if (component.onSave) {
-      if (isDevMode()) {
-        alert('Evento salvato con successo!');
+                currentState: RouterStateSnapshot): Promise<boolean> {
+    return new Promise((resolve) => {
+
+      if (component.onSave) {
+        if (isDevMode()) {
+          alert('Evento salvato con successo!');
+        }
+        resolve(true);
+      } else {
+        resolve(window.confirm('Ci sono modifiche non salvate. Sei sicuro di voler cancellare?'));
       }
-      return true;
-    } else {
-      return window.confirm('Ci sono modifiche non salvate. Sei sicuro di voler cancellare?');
-    }
+    });
   }
 }
