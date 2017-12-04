@@ -15,17 +15,22 @@
       </select>
     </div>
 
-    <div>
-      <label for="data">Data</label>
-      <input [(ngModel)]="currentEvent.data"
-             id="data" name="data" type="date" placeholder="gg/mm/aaaa">
+    <div class="flex">
+      <div>
+        <label for="data">Data</label>
+        <input [(ngModel)]="currentEvent.data"
+               id="data" name="data" type="date" placeholder="gg/mm/aaaa">
+      </div>
+
+      <div>
+        <label for="ora">Ora</label>
+        <input [(ngModel)]="currentEvent.ora" type="time"
+               id="ora" name="ora" value="14:30" placeholder="hh:mm" step="60">
+      </div>
     </div>
 
-    <div>
-      <label for="ora">Ora</label>
-      <input [(ngModel)]="currentEvent.ora" type="time"
-             id="ora" name="ora" value="14:30" placeholder="hh:mm" step="60">
-    </div>
+
+
 
     <!-- Terza riga -->
     <div>

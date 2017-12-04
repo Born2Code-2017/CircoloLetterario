@@ -1,14 +1,23 @@
-#menuNav {
+.menuNav{
+  width: 100vw;
+  height: calc(100% - 3.4rem);
+  position: fixed;
+  top: 3.4rem;
+  display: flex;
+  color: white;
+  transform: translateX(-100vw);
+  transition: transform 0.2s ease-in;
+  z-index: 500;
+}
+.menuNav>*:first-child {
   width: 300px;
   height: 100%;
   background-color: var(--ilClub-red, #B30000);
-  position: fixed;
   padding: var(--margin-layout, 16px);
-  color: white;
-  -webkit-transform: translate(-300px);
-  transform: translateX(-300px);
-  transition: transform 0.2s ease-in;
-  z-index: 500;
+  box-shadow: 9px 0 10px -8px rgba(0, 0, 0, 0.35);
+}
+.menuNav>*:last-child{
+  background-color: transparent;
 }
 .change1 {
   -webkit-transform: translateX(0) !important;
