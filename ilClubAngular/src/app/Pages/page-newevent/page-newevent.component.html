@@ -3,7 +3,7 @@
   </div>
   <div class="cardForm">
     <label for="nome_evento">Nome dell'evento</label>
-    <input id="nome_evento" name="nome_evento" type="text" required [(ngModel)]="currentEvent.titolo">
+    <input id="nome_evento" name="nome evento" type="text" required [(ngModel)]="currentEvent.titolo">
     <div>
       <label for="libreria">Scegli libreria</label>
       <select required [(ngModel)]="currentEvent.sede" id="libreria" name="libreria">
@@ -18,13 +18,13 @@
       <div class="width50">
         <label for="data">Data</label>
         <input required [(ngModel)]="currentEvent.data"
-               id="data" name="data" type="date" placeholder="gg/mm/aaaa">
+               id="data" name="data evento" type="date" placeholder="gg/mm/aaaa">
       </div>
 
       <div class="width50">
         <label for="ora">Ora</label>
         <input required [(ngModel)]="currentEvent.ora" type="time"
-               id="ora" name="ora" value="14:30" placeholder="hh:mm" step="60">
+               id="ora" name="ora evento" value="14:30" placeholder="hh:mm" step="60">
       </div>
     </div>
 
@@ -32,12 +32,12 @@
     <div>
       <label for="descrizione">Descrizione</label>
       <textarea required [(ngModel)]="currentEvent.descrizione"
-                rows="5" id="descrizione" name="descrizione"
+                rows="5" id="descrizione" name="descrizione evento"
                 placeholder="Descrizione evento..."> </textarea>
     </div>
     <div>
       <label for="imgUrl">Genere evento</label>
-      <select required [(ngModel)]="currentEvent.immagine" id="imgUrl" name="imgUrl" [value]="currentEvent.immagine">
+      <select required [(ngModel)]="currentEvent.immagine" id="imgUrl" name="genere evento" [value]="currentEvent.immagine">
         <option value="./assets/EventDefault.jpg">generale</option>
         <option value="./assets/EventDefault.jpg">barman</option>
         <option value="./assets/EventDefault.jpg">cuoco</option>
@@ -49,9 +49,9 @@
     <!-- Quarta riga -->
   </div>
   <div class="flex paddingLayoutRoule">
-    <input class="flexGrow squareButton" type="button" (click)="cancel()" value="❮  cancella">
+    <input class="flexGrow squareButton" name="cancella evento" type="button" (click)="cancel()" value="❮  cancella">
     <div class="widthLayoutRoule"></div>
-    <input class="flexGrow squareButton accentButton" type="button"
+    <input class="flexGrow squareButton accentButton" type="button" name="salva evento"
            [disabled]="!newEventForm.valid || newEventForm.pristine" (click)="save()" value="salva">
   </div>
 </form>

@@ -187,7 +187,6 @@ main{
 }
 .cRBdelete{
   background: var(--ilClub-red, #B30000) url("assets/delete.svg") no-repeat center;
-
 }
 .cRBedit{
   background: var(--ilClub-red, #B30000) url("assets/edit-button.svg") no-repeat center;
@@ -305,7 +304,7 @@ main{
 }
 .blurable{
   filter: none;
-  transition: filter 0.3s ease-in;
+  transition: filter 0.3s linear;
 }
 .blur {
   filter: blur(2.5px);

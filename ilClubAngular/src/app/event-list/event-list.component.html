@@ -2,9 +2,9 @@
   <div class="cardImg"></div>
   <div class="cardDetail">
     <div class="cardRoundButtonContainer">
-      <button *ngIf="evento.owner === 'sandra.green@email.com'" class="cRBdelete" (click)="deleteEvent(evento.key)"></button>
-      <button *ngIf="evento.owner === 'sandra.green@email.com'" class="cRBedit" (click)="editEvent(evento.key)"></button>
-      <button *ngIf="evento.owner === 'sandra.green@email.com'" class="cRBnoPartecipa" (click)="partecipaEvent(evento.key)"></button>
+      <button *ngIf="evento.owner === 'sandra.green@email.com'" name="cancella evento" class="cRBdelete" (click)="deleteEvent(evento.key)"></button>
+      <button *ngIf="evento.owner === 'sandra.green@email.com'" name="modifica evento" class="cRBedit" (click)="editEvent(evento.key)"></button>
+      <button *ngIf="evento.owner === 'sandra.green@email.com'" name="partecipa ad evento" class="cRBnoPartecipa" (click)="partecipaEvent(evento.key)"></button>
     </div>
     <h2>{{evento.titolo}}</h2>
     <div class="lineMargin">

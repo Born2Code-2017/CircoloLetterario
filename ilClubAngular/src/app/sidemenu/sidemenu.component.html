@@ -1,7 +1,7 @@
-<div class="menuNav" [ngClass]=" isMenuOpen? 'change1' : ''">
+<div class="menuNav" [ngClass]="isMenuOpen? 'change1' : ''">
   <nav>
-    <div routerLink="profile" class="profileImg"></div>
-    <h2 routerLink="profile" class="texCenter lineMargin">Sandra Green</h2>
+    <div routerLink="profile" (click)="close()" class="profileImg"></div>
+    <h2 routerLink="profile" (click)="close()" class="texCenter lineMargin">Sandra Green</h2>
     <div class="counterContainer overflow">
       <div class="floatLeft texCenter">
         <p id="menuNav_interestedCounter">4</p>

@@ -10,12 +10,12 @@ import { PageLoginComponent } from './Pages/page-login/page-login.component';
 export const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    component: PageHomeComponent,
     pathMatch: 'full'
   },
   {
     path: 'home',
-    component: PageHomeComponent,
+    redirectTo: '',
     pathMatch: 'full'
   },
   {

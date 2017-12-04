@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,  shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Description">
   <meta name="keywords" content="Keywords">
   <title>ilClub</title>
@@ -26,7 +26,7 @@
   <!-- Pinned Sites  -->
   <meta name="application-name" content="ilClub">
   <meta name="msapplication-tooltip" content="Short description">
-  <meta name="msapplication-starturl" content="/">
+  <meta name="msapplication-starturl" content="/index.html">
   <!-- Tap highlighting  -->
   <meta name="msapplication-tap-highlight" content="yes">
   <!-- UC Mobile Browser  -->
@@ -64,7 +64,7 @@
 
   <!-- Others -->
   <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
-  <link href="favicon.ico" rel="icon" type="image/x-icon" >
+  <link href="favicon.ico" rel="icon" type="image/x-icon">
 
   <!-- UC Browser  -->
   <link href="icons/favicon-48x48.png" rel="apple-touch-icon-precomposed" sizes="48x48">
@@ -75,6 +75,18 @@
 
 </head>
 <body>
-  <app-root></app-root>
+<app-root>Loading...</app-root>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then((registration) => {
+      console.log('SW registered');
+  })
+  .catch((err) => {
+      console.log('SW error', err);
+  });
+  }
+</script>
 </body>
 </html>
