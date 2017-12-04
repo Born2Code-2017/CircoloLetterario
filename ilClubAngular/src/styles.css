@@ -165,35 +165,25 @@ main{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.13), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
   transition: margin 0.2s ease-in;
 }
-.cardDetail #partecipanti,
-.cardDetail #eventDescription {
-  display: none;
-}
-.cardDetail:hover{
-  margin: 0px 0px var(--margin-layout, 16px) 0px;
-  box-shadow:0;
-}
-.cardDetail:hover> div{
-  display: block;
-}
-.cardDetail:hover #partecipanti,
-.cardDetail:hover #eventDescription {
-  display: block;
-}
-.cardRoundButton{
+.cardRoundButtonContainer{
   position: absolute;
-  display: none;
+  height: 3.3rem;
+  background-color: blue;
+  display: flex;
+  flex-direction: revert;
+  right: var(--margin-layout, 16px);
+  top: -1.65rem;
+  margin-left: auto;
+}
+.cardRoundButtonContainer>button{
   width: 3.3rem;
   height: 3.3rem;
   border-radius: 50%;
-  border:0px;
+  border:0;
   background-color: var(--ilClub-red, #B30000);
   background-image: url("assets/bookmark.svg");
   background-position: center;
   background-repeat: no-repeat;
-  right: var(--margin-layout, 16px);
-  top: -1.65rem;
-  margin-left: auto;
 }
 .pageTitle {
   padding: var(--margin-layout, 16px);

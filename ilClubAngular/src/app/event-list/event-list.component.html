@@ -1,12 +1,35 @@
-<div class="col-7" id="boxEventi">
+<!--<div>-->
+  <!--<div *ngFor="let evento of showEvents" class='EventiUtente'>-->
+    <!--<div class='col-9'>-->
+      <!--<p>{{evento.titolo}}</p><p>{{evento.data}}</p> <p>{{evento.sede}}</p>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;<div class='col-3' data-img='"+evento.immagine+"'></div>&ndash;&gt;-->
+    <!--<button *ngIf="evento.owner === 'sandra.green@email.com'" (click)="deleteEvent(evento.key)">Cancella</button>-->
+    <!--<button *ngIf="evento.owner === 'sandra.green@email.com'" (click)="editEvent(evento.key)">Modifica</button>-->
+  <!--</div>-->
 
-  <div *ngFor="let evento of showEvents" class='EventiUtente'>
-    <div class='col-9'>
-      <p>{{evento.titolo}}</p><p>{{evento.data}}</p> <p>{{evento.sede}}</p>
+<!--</div>-->
+
+
+<div *ngFor="let evento of showEvents" class="card">
+  <div class="cardImg"></div>
+  <div class="cardDetail">
+    <div class="cardRoundButtonContainer">
+      <button *ngIf="evento.owner === 'sandra.green@email.com'" (click)="deleteEvent(evento.key)"></button>
+      <button *ngIf="evento.owner === 'sandra.green@email.com'" (click)="editEvent(evento.key)"></button>
+      <button *ngIf="evento.owner === 'sandra.green@email.com'" (click)="partecipaEvent(evento.key)"></button>
     </div>
-    <!--<div class='col-3' data-img='"+evento.immagine+"'></div>-->
-    <button *ngIf="evento.owner === 'sandra.green@email.com'" (click)="deleteEvent(evento.key)">Cancella</button>
-    <button *ngIf="evento.owner === 'sandra.green@email.com'" (click)="editEvent(evento.key)">Modifica</button>
+    <h2>{{evento.titolo}}</h2>
+    <div class="lineMargin">
+      <img class="lineIcon" src="res/calendar-black.svg" alt="calendar" />
+      <span>{{evento.data}} {{evento.sede}}</span>
+    </div>
+    <div>
+      <img class="lineIcon" src="res/users.svg" alt="calendar" />
+      <span>{{evento.partecipanti}}</span>
+    </div>
+    <div>
+      <p class="textJustified">{{evento.descrizione}}</p>
+    </div>
   </div>
-
 </div>

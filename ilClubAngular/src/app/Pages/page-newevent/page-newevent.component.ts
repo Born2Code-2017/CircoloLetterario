@@ -17,29 +17,27 @@ export class PageNeweventComponent {
   onSuccess: string;
   onError: string;
   key: string;
-  show: boolean = false;
+  show = false;
   email: string;
 
-  constructor(private router: Router, 
-    activatedRoute: ActivatedRoute, 
-    private service: FirebaseService, 
-    private serviceUser: UserService) {
+  constructor(private router: Router,
+              activatedRoute: ActivatedRoute,
+              private service: FirebaseService,
+              private serviceUser: UserService) {
 
     this.email = localStorage.getItem('email');
-    //this.serviceUser.getEmail().subscribe(address => {this.email = address; console.log(address); });
-    
+    // this.serviceUser.getEmail().subscribe(address => {this.email = address; console.log(address); });
+
     this.key = activatedRoute.snapshot.params['key'];
-    
-    if(this.key){
+
+    if (this.key) {
       this.service.getEvent(this.key).subscribe(event => {
-        this.currentEvent = event; 
-        console.log(this.key); 
+        this.currentEvent = event;
+        console.log(this.key);
         console.log(this.currentEvent);
         this.show = true;
       });
-    }
-    else{
-      
+    } else {
       this.currentEvent = new Event;
       this.currentEvent.sede = 'Libreria Ostia';
       this.currentEvent.immagine = 'generale';
@@ -48,7 +46,7 @@ export class PageNeweventComponent {
       console.log(this.email);
     }
   }
-  
+
 
   cancel() {
     this.onSave = false;
@@ -57,22 +55,22 @@ export class PageNeweventComponent {
 
   save() {
     this.onSave = true;
-    if(!this.key){
+    if (!this.key) {
       this.service.createEvent(this.currentEvent).subscribe(arg => {
-        this.router.navigateByUrl('/home');
-        this.onSuccess = 'Evento salvato';
-        console.log(this.onSuccess);
+          this.router.navigateByUrl('/home');
+          this.onSuccess = 'Evento salvato';
+          console.log(this.onSuccess);
         },
         err => {
           this.onError = 'errore nel salvataggio';
           console.log(this.onError);
         }
       );
-    }else{
+    } else {
       this.service.editEvent(this.key, this.currentEvent).subscribe(arg => {
-        this.router.navigateByUrl('/home');
-        this.onSuccess = 'Evento modificato';
-        console.log(this.onSuccess);
+          this.router.navigateByUrl('/home');
+          this.onSuccess = 'Evento modificato';
+          console.log(this.onSuccess);
         },
         err => {
           this.onError = 'errore nella modifica';

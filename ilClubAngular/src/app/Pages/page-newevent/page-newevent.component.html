@@ -2,7 +2,7 @@
   <div class="pageTitle" [style.background-image]="'url('+currentEvent.immagine+')'">
 
   </div>
-  <div class="cardForm" *ngIf='show'>
+  <div class="cardForm">
     <label for="nome_evento">Nome dell'evento</label>
     <input id="nome_evento" name="nome_evento" type="text" [(ngModel)]="currentEvent.titolo">
     <div>
@@ -28,9 +28,6 @@
                id="ora" name="ora" value="14:30" placeholder="hh:mm" step="60">
       </div>
     </div>
-
-
-
 
     <!-- Terza riga -->
     <div>
