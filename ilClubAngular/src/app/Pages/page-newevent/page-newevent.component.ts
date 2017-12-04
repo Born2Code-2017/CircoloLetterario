@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {User} from '../../models/user';
 import {Event} from '../../models/event';
 import {Router, ActivatedRoute} from '@angular/router';
 import {FirebaseService} from '../../firebase.service';
@@ -40,7 +39,7 @@ export class PageNeweventComponent {
     } else {
       this.currentEvent = new Event;
       this.currentEvent.sede = 'Libreria Ostia';
-      this.currentEvent.immagine = 'generale';
+      this.currentEvent.immagine = './assets/EventDefault.jpg';
       this.currentEvent.owner = this.email;
       this.show = true;
       console.log(this.email);

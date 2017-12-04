@@ -36,10 +36,9 @@
                 placeholder="Descrizione evento..."> </textarea>
     </div>
     <div>
-      <label for="imgUrl">Tipologia evento</label>
-      <select required [(ngModel)]="currentEvent.immagine" id="imgUrl" name="imgUrl">
-        <!-- <option value="">scegli</option> -->
-        <option value="./assets/EventDefault.jpg" selected>generale</option>
+      <label for="imgUrl">Genere evento</label>
+      <select required [(ngModel)]="currentEvent.immagine" id="imgUrl" name="imgUrl" [value]="currentEvent.immagine">
+        <option value="./assets/EventDefault.jpg">generale</option>
         <option value="./assets/EventDefault.jpg">barman</option>
         <option value="./assets/EventDefault.jpg">cuoco</option>
         <option value="./assets/EventDefault.jpg">gruppo</option>

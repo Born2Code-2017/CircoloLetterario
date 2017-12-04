@@ -170,8 +170,7 @@ main{
 }
 .cardRoundButtonContainer{
   position: absolute;
-  height: 3.3rem;
-  background-color: blue;
+  height: 3rem;
   display: flex;
   flex-direction: revert;
   right: var(--margin-layout, 16px);
@@ -179,12 +178,20 @@ main{
   margin-left: auto;
 }
 .cardRoundButtonContainer>button{
-  width: 3.3rem;
-  height: 3.3rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   border:0;
+  background-size: 40%;
+  margin-left: 0.5rem;
 }
+.cRBdelete{
+  background: var(--ilClub-red, #B30000) url("assets/delete.svg") no-repeat center;
 
+}
+.cRBedit{
+  background: var(--ilClub-red, #B30000) url("assets/edit-button.svg") no-repeat center;
+}
 .cRBnoPartecipa{
   background: var(--ilClub-red, #B30000) url("assets/bookmark.svg") no-repeat center;
 }
@@ -192,6 +199,8 @@ main{
   background: var(--ilClub-darkGray, rgb(78, 78, 78)) url("assets/bookmark.svg") no-repeat center;
   /*vuoto*/
 }
+
+
 
 .pageTitle {
   padding: var(--margin-layout, 16px);
@@ -299,49 +308,12 @@ main{
   transition: filter 0.3s ease-in;
 }
 .blur {
-  filter: blur(2.5px) brightness(70%);
+  filter: blur(2.5px);
+/*brightness(70%);*/
 }
 .focus {
   filter: none !important;
 }
-/*End Utility*/
-
-
-/*Elimina*/
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
-
-
-
-[class*="col-"] {
-  float: left;
-  padding: 0;
-  margin: 0;
-  border: 0px solid rgba(255, 0, 0, 0.14);
-  box-sizing: border-box;
-}
-/*fine elimina*/
-
-
-
-
-
-
-
-
-
-
-
 
 
 
