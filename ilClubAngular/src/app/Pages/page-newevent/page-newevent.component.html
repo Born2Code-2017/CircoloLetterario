@@ -1,13 +1,12 @@
-<form novalidate *ngIf='show'>
+<form novalidate *ngIf="show" #newEventForm="ngForm">
   <div class="pageTitle" [style.background-image]="'url('+currentEvent.immagine+')'">
-
   </div>
   <div class="cardForm">
     <label for="nome_evento">Nome dell'evento</label>
-    <input id="nome_evento" name="nome_evento" type="text" [(ngModel)]="currentEvent.titolo">
+    <input id="nome_evento" name="nome_evento" type="text" required [(ngModel)]="currentEvent.titolo">
     <div>
       <label for="libreria">Scegli libreria</label>
-      <select [(ngModel)]="currentEvent.sede" id="libreria" name="libreria">
+      <select required [(ngModel)]="currentEvent.sede" id="libreria" name="libreria">
         <option value="Libreria Ostia">Libreria Ostia</option>
         <option value="Libreria Ostia 1">Libreria Ostia 1</option>
         <option value="Libreria Ostia 2">Libreria Ostia 2</option>
@@ -16,15 +15,15 @@
     </div>
 
     <div class="flex">
-      <div>
+      <div class="width50">
         <label for="data">Data</label>
-        <input [(ngModel)]="currentEvent.data"
+        <input required [(ngModel)]="currentEvent.data"
                id="data" name="data" type="date" placeholder="gg/mm/aaaa">
       </div>
 
-      <div>
+      <div class="width50">
         <label for="ora">Ora</label>
-        <input [(ngModel)]="currentEvent.ora" type="time"
+        <input required [(ngModel)]="currentEvent.ora" type="time"
                id="ora" name="ora" value="14:30" placeholder="hh:mm" step="60">
       </div>
     </div>
@@ -32,13 +31,13 @@
     <!-- Terza riga -->
     <div>
       <label for="descrizione">Descrizione</label>
-      <textarea [(ngModel)]="currentEvent.descrizione"
+      <textarea required [(ngModel)]="currentEvent.descrizione"
                 rows="5" id="descrizione" name="descrizione"
                 placeholder="Descrizione evento..."> </textarea>
     </div>
     <div>
       <label for="imgUrl">Tipologia evento</label>
-      <select [(ngModel)]="currentEvent.immagine" id="imgUrl" name="imgUrl">
+      <select required [(ngModel)]="currentEvent.immagine" id="imgUrl" name="imgUrl">
         <!-- <option value="">scegli</option> -->
         <option value="./assets/EventDefault.jpg" selected>generale</option>
         <option value="./assets/EventDefault.jpg">barman</option>
@@ -53,6 +52,7 @@
   <div class="flex paddingLayoutRoule">
     <input class="flexGrow squareButton" type="button" (click)="cancel()" value="❮  cancella">
     <div class="widthLayoutRoule"></div>
-    <input class="flexGrow squareButton accentButton" type="button" (click)="save()" value="salva">
+    <input class="flexGrow squareButton accentButton" type="button"
+           [disabled]="!newEventForm.valid || newEventForm.pristine" (click)="save()" value="salva">
   </div>
 </form>

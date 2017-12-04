@@ -180,11 +180,16 @@ main{
   height: 3.3rem;
   border-radius: 50%;
   border:0;
-  background-color: var(--ilClub-red, #B30000);
-  background-image: url("assets/bookmark.svg");
-  background-position: center;
-  background-repeat: no-repeat;
 }
+
+.cRBnoPartecipa{
+  background: var(--ilClub-red, #B30000) url("assets/bookmark.svg") no-repeat center;
+}
+.cRBpartecipa{
+  background: var(--ilClub-darkGray, rgb(78, 78, 78)) url("assets/bookmark.svg") no-repeat center;
+  /*vuoto*/
+}
+
 .pageTitle {
   padding: var(--margin-layout, 16px);
   height: 10rem;
