@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
+import {UserLoginService} from '../../Services/user-login.service';
 
 @Component({
   selector: 'app-page-profile',
@@ -7,17 +8,21 @@ import { User } from '../../models/user';
   styleUrls: ['./page-profile.component.css']
 })
 export class PageProfileComponent implements OnInit {
-  eventList: Event[]; // per caricare gli eventi da visualizzare
-  currentUser: User; // per caricare le info dell'utente loggato
+  currentUser: User;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor( private userService: UserLoginService) {
+    this.currentUser = new User();
+    console.log('loggedUser constructor');
   }
 
-  loadEvents() {
-    // qui faccio la get degli eventi da visualizzare
-    // l'utente visualizza gli eventi di cui è l'owner
+  ngOnInit() {
+    console.log('loggedUser ngOnInit');
+    console.log(this.userService.getLoggedUser());
+    this.userService.getLoggedUser().subscribe(loggedUser => {
+      console.log('loggedUser:');
+      console.log(loggedUser);
+      this.currentUser = loggedUser;
+    });
   }
 
   editImage() {

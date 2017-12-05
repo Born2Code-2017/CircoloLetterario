@@ -18,6 +18,7 @@ import {UserService} from './user.service';
 import {NewEventGuard} from './Pages/page-newevent/newevent.guard';
 import { EventListComponent } from './event-list/event-list.component';
 import {EventsHandler} from './Services/eventsHandler.service';
+import {UserLoginService} from './Services/user-login.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {EventsHandler} from './Services/eventsHandler.service';
     FirebaseService,
     UserService,
     NewEventGuard,
-    EventsHandler
+    EventsHandler,
+    UserLoginService
   ],
   bootstrap: [AppComponent]
 })
