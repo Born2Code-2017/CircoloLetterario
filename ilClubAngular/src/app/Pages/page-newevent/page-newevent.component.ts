@@ -40,7 +40,8 @@ export class PageNeweventComponent {
       });
     } else {
       this.currentEvent = new Event();
-      this.currentEvent.immagine = './assets/img/default.jpg';
+      this.currentEvent.sede = 'Libreria Ostia'; // in questo modo la select viene impostata sulla prima option
+      this.currentEvent.immagine = './assets/type-event/default.jpg';
       this.currentEvent.owner = this.currentUser.email;
       this.show = true;
     }
