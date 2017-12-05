@@ -41,6 +41,11 @@ export const appRoutes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'login',
+    component: PageLoginComponent,
+    pathMatch: 'full'
+  },
+  {
     path: '**',
     component: PageNotfoundcomponentComponent,
     pathMatch: 'full'
