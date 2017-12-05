@@ -1,5 +1,5 @@
 <div *ngFor="let evento of showEvents" class="card">
-  <div class="cardImg"></div>
+  <div class="cardImg" [style.background-image]="'url('+evento.immagine+')'"></div>
   <div class="cardDetail">
     <div class="cardRoundButtonContainer">
       <button *ngIf="evento.owner === 'sandra.green@email.com'" name="cancella evento" class="cRBdelete" (click)="deleteEvent(evento.key)"></button>
@@ -8,11 +8,11 @@
     </div>
     <h2>{{evento.titolo}}</h2>
     <div class="lineMargin">
-      <img class="lineIcon" src="../../assets/calendar-black.svg" alt="calendar" />
+      <img class="lineIcon" src="./assets/calendar-black.svg" alt="calendar" />
       <span>{{evento.data}} {{evento.sede}}</span>
     </div>
     <div>
-      <img class="lineIcon" src="../../assets/users.svg" alt="calendar" />
+      <img class="lineIcon" src="./assets/users.svg" alt="calendar" />
       <span>{{evento.partecipanti}}</span>
     </div>
     <div>
