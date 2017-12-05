@@ -1,7 +1,7 @@
 :root {
   --margin-layout: 16px;
   --half-margin-layout: 8px;
-  --double-margin-layout: 38px;
+  --double-margin-layout: 32px;
   --negative-margin-layout: -16px;
   --ilClub-red: #B30000;
   --ilClub-darkGray : rgb(78, 78, 78);
@@ -333,10 +333,12 @@ main{
   #menuButton{
     display: none;
   }
-  /*:root {
-    --margin-layout: 24px;
-    --negative-margin-layout: -24px;
-  }*/
+  :root {
+    --margin-layout: 32px;
+    --half-margin-layout: 16px;
+    --double-margin-layout: 64px;
+    --negative-margin-layout: -32px;
+  }
 }
 /*Desktop*/
 @media only screen and (min-width: 1000px) {
@@ -350,13 +352,19 @@ main{
     display: block;
   }
 }
-/*2K TV*/
+
 @media only screen and (min-width: 1440px) {
   #menuNav {
     -webkit-transform: translate(0);
     transform: translateX(0);
     position: static;
     /*fisso sulla sinistra*/
+  }
+  :root {
+    --margin-layout: 48px;
+    --half-margin-layout: 24px;
+    --double-margin-layout: 96px;
+    --negative-margin-layout: -48px;
   }
   #menuButton{
     display: none;
@@ -366,5 +374,11 @@ main{
 @media only screen and (min-width: 2500px) {
   body, html {
     font-size: 26px;
+  }
+  :root {
+    --margin-layout: 64px;
+    --half-margin-layout: 32px;
+    --double-margin-layout: 128px;
+    --negative-margin-layout: -64px;
   }
 }

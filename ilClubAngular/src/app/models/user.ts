@@ -1,8 +1,8 @@
-export class User{
+export class User {
   nome: string;
   cognome: string;
   email: string;
-  id: number; 
+  id: number;
   eventi: string[];
   password: string;
 }

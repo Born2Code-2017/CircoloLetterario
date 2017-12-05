@@ -22,22 +22,18 @@ export class PageLoginComponent {
     this.service.getData('Utenti.json').subscribe(users => {
 
       for (const idx in users) {
-        console.log(users[idx]);
-        if (users[idx].email === this.email) {
-          if (users[idx].password === this.password) {
-            this.loginError = false;
-            this.loginDone = true;
-            // this.serviceUser.setUtente(users[idx]);
-            localStorage.setItem('email', users[idx].email);
-          } else {
-            alert('password errata');
-            this.loginError = true;
-            this.loginDone = false;
-          }
+        if (users[idx].email.toLowerCase() === this.email.toLowerCase() &&
+            users[idx].password === this.password) {
+          this.loginError = false;
+          this.loginDone = true;
+          // this.serviceUser.setUtente(users[idx]);
+          localStorage.setItem('email', users[idx].email);
+        } else {
+          this.loginError = true;
+          this.loginDone = false;
         }
       }
     });
-
     console.log('loginDone: ' + this.loginDone);
   }
 }
