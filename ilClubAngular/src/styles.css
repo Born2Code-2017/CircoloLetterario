@@ -335,7 +335,7 @@ main{
   }
   :root {
     --margin-layout: 32px;
-    --half-margin-layout: 16px;
+    /*--half-margin-layout: 16px;*/
     --double-margin-layout: 64px;
     --negative-margin-layout: -32px;
   }
@@ -362,7 +362,7 @@ main{
   }
   :root {
     --margin-layout: 48px;
-    --half-margin-layout: 24px;
+    /*--half-margin-layout: 24px;*/
     --double-margin-layout: 96px;
     --negative-margin-layout: -48px;
   }
@@ -377,7 +377,7 @@ main{
   }
   :root {
     --margin-layout: 64px;
-    --half-margin-layout: 32px;
+    /*--half-margin-layout: 32px;*/
     --double-margin-layout: 128px;
     --negative-margin-layout: -64px;
   }
