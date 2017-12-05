@@ -1,6 +1,6 @@
 <app-calendar></app-calendar>
 <div class="blurable" [ngClass]="isCalendarOpen? 'blur' : 'focus'">
-  <app-event-list *ngIf="idTaken" [eventsId]="userEvents"></app-event-list>
+  <app-event-list *ngIf="idTaken" [eventsId]="currentUser.eventi"></app-event-list>
   <div class="pageButtonsContainer">
     <button [ngClass]="isCalendarOpen? 'hide': 'show'" name="open calendar"
             class="calendarIcon" (click)="OpenCalendar()">

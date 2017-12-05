@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Event} from '../../models/event';
 import {Router, ActivatedRoute} from '@angular/router';
 import {FirebaseService} from '../../firebase.service';
-import {UserService} from '../../user.service';
+import {User} from '../../models/user';
 
 @Component({
   selector: 'app-page-newevent',
@@ -17,14 +17,16 @@ export class PageNeweventComponent {
   onError: string;
   key: string;
   show = false;
-  email: string;
+  // email: string;
+  currentUser: User;
 
   constructor(private router: Router,
               activatedRoute: ActivatedRoute,
-              private service: FirebaseService,
-              private serviceUser: UserService) {
+              private service: FirebaseService) {
 
-    this.email = localStorage.getItem('email');
+    // this.email = localStorage.getItem('email');
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    console.log('this.currentUser ' + this.currentUser);
     // this.serviceUser.getEmail().subscribe(address => {this.email = address; console.log(address); });
 
     this.key = activatedRoute.snapshot.params['key'];
@@ -37,12 +39,10 @@ export class PageNeweventComponent {
         this.show = true;
       });
     } else {
-      this.currentEvent = new Event;
-      this.currentEvent.sede = 'Libreria Ostia';
+      this.currentEvent = new Event();
       this.currentEvent.immagine = './assets/EventDefault.jpg';
-      this.currentEvent.owner = this.email;
+      this.currentEvent.owner = this.currentUser.email;
       this.show = true;
-      console.log(this.email);
     }
   }
 

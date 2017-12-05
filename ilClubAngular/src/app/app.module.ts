@@ -14,11 +14,10 @@ import {SideMenuComponent} from './sidemenu/sidemenu.component';
 import {CalendarComponent} from './calendar/calendar.component';
 import {PageLoginComponent} from './Pages/page-login/page-login.component';
 import {FirebaseService} from './firebase.service';
-import {UserService} from './user.service';
 import {NewEventGuard} from './Pages/page-newevent/newevent.guard';
 import { EventListComponent } from './event-list/event-list.component';
 import {EventsHandler} from './Services/eventsHandler.service';
-import {UserLoginService} from './Services/user-login.service';
+import {AuthGuard} from './Guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -41,10 +40,9 @@ import {UserLoginService} from './Services/user-login.service';
   ],
   providers: [
     FirebaseService,
-    UserService,
     NewEventGuard,
-    EventsHandler,
-    UserLoginService
+    AuthGuard,
+    EventsHandler
   ],
   bootstrap: [AppComponent]
 })

@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {EventsHandler} from '../Services/eventsHandler.service';
 import {User} from '../models/user';
-import {UserService} from '../user.service';
 
 @Component({
   selector: 'app-header',
@@ -11,12 +10,10 @@ import {UserService} from '../user.service';
 export class HeaderComponent implements OnInit {
   isMenuOpen: boolean;
   isCalendarOpen: boolean;
-  userEmail: string;
 
-  constructor(private appService: EventsHandler, private serviceUser: UserService) {
+  constructor(private appService: EventsHandler) {
     this.isMenuOpen = false;
     this.isCalendarOpen = false;
-    // this.userEmail = localStorage.getItem('email');
   }
 
   ngOnInit() {

@@ -7,11 +7,13 @@ import { PageNotfoundcomponentComponent } from './Pages/page-notfoundcomponent/p
 import { PageProfileComponent } from './Pages/page-profile/page-profile.component';
 import { NewEventGuard } from './Pages/page-newevent/newevent.guard';
 import { PageLoginComponent } from './Pages/page-login/page-login.component';
+import {AuthGuard} from './Guards/auth.guard';
 export const appRoutes: Routes = [
   {
     path: '',
     component: PageHomeComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate: [AuthGuard]
   },
   {
     path: 'home',
@@ -26,24 +28,22 @@ export const appRoutes: Routes = [
   {
     path: 'new-event',
     component: PageNeweventComponent,
-    canDeactivate: [NewEventGuard],
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate: [AuthGuard],
+    canDeactivate: [NewEventGuard]
   },
   {
     path: 'new-event/:key',
     component: PageNeweventComponent,
+    pathMatch: 'full',
     canDeactivate: [NewEventGuard],
-    pathMatch: 'full'
+    canActivate: [AuthGuard]
   },
   {
     path: 'profile',
     component: PageProfileComponent,
-    pathMatch: 'full'
-  },
-  {
-    path: 'login',
-    component: PageLoginComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate: [AuthGuard],
   },
   {
     path: '**',

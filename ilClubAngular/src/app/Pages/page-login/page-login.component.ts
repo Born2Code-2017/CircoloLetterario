@@ -1,9 +1,6 @@
 import {Component} from '@angular/core';
 import {FirebaseService} from '../../firebase.service';
-import {UserService} from '../../user.service';
-import {Router, ActivatedRoute} from '@angular/router';
-import {EventsHandler} from '../../Services/eventsHandler.service';
-import {UserLoginService} from '../../Services/user-login.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-page-login',
@@ -16,27 +13,25 @@ export class PageLoginComponent {
   loginError = false;
   loginDone = false;
 
-  constructor(private router: Router, private service: FirebaseService, private serviceUser: UserService, private userService: UserLoginService) {
+  constructor(private router: Router, private service: FirebaseService) {
     // this.serviceUser.getEmail().subscribe(arg => console.log(arg));
   }
 
   login() {
     this.service.getData('Utenti.json').subscribe(users => {
-
       for (const idx in users) {
         if (users[idx].email.toLowerCase() === this.email.toLowerCase() &&
             users[idx].password === this.password) {
           this.loginError = false;
           this.loginDone = true;
-          // this.serviceUser.setUtente(users[idx]);
-          this.userService.setLoggedUser(users[idx]);
-          localStorage.setItem('email', users[idx].email);
+          localStorage.setItem('currentUser', JSON.stringify(users[idx]));
+          console.log('login effetuato con successo' + localStorage.getItem('currentUser'));
+          this.router.navigateByUrl('/home');
         } else {
           this.loginError = true;
-          this.loginDone = false;
+          console.log('errore nel login');
         }
       }
     });
-    console.log('loginDone: ' + this.loginDone);
   }
 }

@@ -3,6 +3,7 @@ import {FirebaseService} from '../firebase.service';
 import {Event} from '../models/event';
 import {Router, ActivatedRoute} from '@angular/router';
 import * as _ from 'lodash';
+import {User} from '../models/user';
 
 @Component({
   selector: 'app-event-list',
@@ -10,39 +11,33 @@ import * as _ from 'lodash';
   styleUrls: ['./event-list.component.css']
 })
 export class EventListComponent implements OnInit {
-
   eventList: Event[];
   eventKeys: string[];
-
-  @Input()
-  eventsId: string[];
-
+  @Input() eventsId: string[];
   showEvents: Event[];
-
+  currentUser: User;
 
   constructor(private router: Router, activatedRoute: ActivatedRoute, private service: FirebaseService) {
-
-    // this.eventsId = [];
-    if (this.eventsId !== []) {
-      this.loadList(1);
-    }
-
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
   ngOnInit() {
+    if (this.eventsId !== []) {
+      this.loadList(1);
+    }
     this.service.clickedDay.subscribe(num => this.showList(num));
   }
 
   loadList(day: number) {
-
     this.eventKeys = [];
     this.eventList = [];
-    console.log('load');
-
     this.service.getData('Eventi.json').subscribe(events => {
       for (const idx in events) {
-        if (events[idx].owner === 'sandra.green@email.com' || this.eventsId && this.eventsId.indexOf(idx) !== -1) {
-          var event = {
+        console.log('event:' + idx);
+        console.log(this.eventsId);
+        if (events[idx].owner.toLowerCase() === this.currentUser.email.toLowerCase() ||
+            this.eventsId && _.includes(this.eventsId, idx)) {
+          const tmpEvent = {
             key: idx,
             data: events[idx].data,
             id: events[idx].id,
@@ -54,12 +49,9 @@ export class EventListComponent implements OnInit {
             sede: events[idx].sede,
             titolo: events[idx].titolo
           };
-          this.eventList.push(event);
-          // this.eventKeys.push(idx);
-          // console.log(i);
+          this.eventList.push(tmpEvent);
         }
       }
-      console.log('------------');
       this.eventList = _.sortBy(this.eventList, e => e.data);
       this.showList(day); // giorno odierno
     });
