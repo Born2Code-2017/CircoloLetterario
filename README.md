@@ -1,6 +1,6 @@
-# Project Name
+# ilClub
 
-ilClub
+
 
 ## Installation
 
@@ -11,7 +11,9 @@ Open and compile with Angular2+
 The web app allows libraries to manages the events they host and the participants.
 
 Credentials are:
+
   Username: sandra.green@email.com
+  
   Password: sandra
 
 
