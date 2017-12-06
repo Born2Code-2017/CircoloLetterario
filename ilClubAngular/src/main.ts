@@ -11,7 +11,7 @@ if (environment.production) {
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.log(err));
 
-if (isDevMode()) {
+/* if (isDevMode()) {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/service-worker.js')
       .then((registration) => {
@@ -20,4 +20,4 @@ if (isDevMode()) {
       console.log('SW error', err);
     });
   }
-}
+} */
