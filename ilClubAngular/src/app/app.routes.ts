@@ -52,8 +52,13 @@ export const appRoutes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: '**',
+    path: 'page-not-found',
     component: PageNotfoundcomponentComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: 'Page-not-found',
     pathMatch: 'full'
   }
 ];
