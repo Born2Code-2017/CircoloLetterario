@@ -1,24 +1,27 @@
 <!-- <button type="button" (click)="mieiEventi()">miei eventi</button>
 <button type="button" (click)="esploraEventi()">esplora nuovi</button> -->
-<div *ngFor="let evento of showEvents" class="card">
-  <div class="cardImg" [style.background-image]="'url('+evento.immagine+')'"></div>
-  <div class="cardDetail">
-    <div class="cardRoundButtonContainer">
-      <button *ngIf="evento.owner === 'sandra.green@email.com'" name="cancella evento" class="cRBdelete" (click)="deleteEvent(evento.key)"></button>
-      <button *ngIf="evento.owner === 'sandra.green@email.com'" name="modifica evento" class="cRBedit" (click)="editEvent(evento.key)"></button>
-      <button *ngIf="evento.owner !== 'sandra.green@email.com'" name="partecipa ad evento" class="cRBnoPartecipa" (click)="partecipaEvent(evento.key)"></button>
-    </div>
-    <h2>{{evento.titolo}}</h2>
-    <div class="lineMargin">
-      <img class="lineIcon" src="./assets/calendar-black.svg" alt="calendar" />
-      <span>{{evento.data}} {{evento.sede}}</span>
-    </div>
-    <div>
-      <img class="lineIcon" src="./assets/users.svg" alt="calendar" />
-      <span>{{evento.partecipanti}}</span>
-    </div>
-    <div>
-      <p class="textJustified">{{evento.descrizione}}</p>
+<div class="flex flexWrap">
+  <div *ngFor="let evento of showEvents" class="card">
+    <div class="cardImg" [style.background-image]="'url('+evento.immagine+')'"></div>
+    <div class="cardDetail">
+      <div class="cardRoundButtonContainer">
+        <button *ngIf="evento.owner === 'sandra.green@email.com'" name="cancella evento" class="cRBdelete" (click)="deleteEvent(evento.key)"></button>
+        <button *ngIf="evento.owner === 'sandra.green@email.com'" name="modifica evento" class="cRBedit" (click)="editEvent(evento.key)"></button>
+        <button *ngIf="evento.owner !== 'sandra.green@email.com'" name="partecipa ad evento" class="cRBnoPartecipa" (click)="partecipaEvent(evento.key)"></button>
+      </div>
+      <h2>{{evento.titolo}}</h2>
+      <div class="lineMargin">
+        <img class="lineIcon" src="./assets/calendar-black.svg" alt="calendar" />
+        <span>{{evento.data}} {{evento.sede}}</span>
+      </div>
+      <div>
+        <img class="lineIcon" src="./assets/users.svg" alt="calendar" />
+        <span>{{evento.partecipanti}}</span>
+      </div>
+      <div>
+        <p class="textJustified">{{evento.descrizione}}</p>
+      </div>
     </div>
   </div>
+  <div class="space width100"></div>
 </div>
