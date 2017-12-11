@@ -8,6 +8,7 @@ import { PageProfileComponent } from './Pages/page-profile/page-profile.componen
 import { NewEventGuard } from './Pages/page-newevent/newevent.guard';
 import { PageLoginComponent } from './Pages/page-login/page-login.component';
 import {AuthGuard} from './Guards/auth.guard';
+import { PageEsploraComponent } from './Pages/page-esplora/page-esplora.component';
 export const appRoutes: Routes = [
   {
     path: '',
@@ -18,6 +19,11 @@ export const appRoutes: Routes = [
   {
     path: 'home',
     redirectTo: '',
+    pathMatch: 'full'
+  },
+  {
+    path: 'esplora',
+    component: PageEsploraComponent,
     pathMatch: 'full'
   },
   {

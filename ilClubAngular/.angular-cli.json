@@ -3,7 +3,6 @@
   "project": {
     "name": "il-club-angular"
   },
-  "serviceWorker": true,
   "apps": [
     {
       "root": "src",
@@ -58,6 +57,10 @@
   },
   "defaults": {
     "styleExt": "css",
-    "component": {}
+    "component": {
+    }
+  },
+  "warnings": {
+    "typescriptMismatch": false
   }
 }

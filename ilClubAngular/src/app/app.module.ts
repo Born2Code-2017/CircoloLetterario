@@ -18,6 +18,7 @@ import {NewEventGuard} from './Pages/page-newevent/newevent.guard';
 import { EventListComponent } from './event-list/event-list.component';
 import {EventsHandler} from './Services/eventsHandler.service';
 import {AuthGuard} from './Guards/auth.guard';
+import { PageEsploraComponent } from './Pages/page-esplora/page-esplora.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {AuthGuard} from './Guards/auth.guard';
     SideMenuComponent,
     CalendarComponent,
     PageLoginComponent,
-    EventListComponent
+    EventListComponent,
+    PageEsploraComponent
   ],
   imports: [
     BrowserModule,

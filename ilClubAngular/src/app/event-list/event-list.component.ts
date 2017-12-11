@@ -13,9 +13,12 @@ import {User} from '../models/user';
 export class EventListComponent implements OnInit {
   eventList: Event[];
   eventKeys: string[];
+
   @Input() eventsId: string[];
   showEvents: Event[];
   currentUser: User;
+
+  @Input() esplora: boolean;
 
   constructor(private router: Router, activatedRoute: ActivatedRoute, private service: FirebaseService) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -35,22 +38,53 @@ export class EventListComponent implements OnInit {
       for (const idx in events) {
         console.log('event:' + idx);
         console.log(this.eventsId);
-        if (events[idx].owner.toLowerCase() === this.currentUser.email.toLowerCase() ||
-            this.eventsId && _.includes(this.eventsId, idx)) {
-          const tmpEvent = {
-            key: idx,
-            data: events[idx].data,
-            id: events[idx].id,
-            descrizione: events[idx].descrizione,
-            immagine: events[idx].immagine,
-            ora: events[idx].ora,
-            owner: events[idx].owner,
-            partecipanti: events[idx].partecipanti,
-            sede: events[idx].sede,
-            titolo: events[idx].titolo
-          };
-          this.eventList.push(tmpEvent);
+
+        //solo i miei eventi
+        if (!this.esplora) {
+
+          if(events[idx].owner.toLowerCase() === this.currentUser.email.toLowerCase() || this.eventsId && _.includes(this.eventsId, idx)){
+            console.log('miei eventi');
+            const tmpEvent = {
+              key: idx,
+              data: events[idx].data,
+              id: events[idx].id,
+              descrizione: events[idx].descrizione,
+              immagine: events[idx].immagine,
+              ora: events[idx].ora,
+              owner: events[idx].owner,
+              partecipanti: events[idx].partecipanti,
+              sede: events[idx].sede,
+              titolo: events[idx].titolo
+            };
+            this.eventList.push(tmpEvent);
+          }
+      
         }
+        //esplora nuovi eventi
+        else if (this.esplora){
+
+          if(events[idx].owner.toLowerCase() !== this.currentUser.email.toLowerCase() && !this.eventsId[idx]){
+
+            console.log('esplora eventi');
+            const tmpEvent = {
+              key: idx,
+              data: events[idx].data,
+              id: events[idx].id,
+              descrizione: events[idx].descrizione,
+              immagine: events[idx].immagine,
+              ora: events[idx].ora,
+              owner: events[idx].owner,
+              partecipanti: events[idx].partecipanti,
+              sede: events[idx].sede,
+              titolo: events[idx].titolo
+            };
+            this.eventList.push(tmpEvent);
+
+          }
+
+        }
+
+
       }
       this.eventList = _.sortBy(this.eventList, e => e.data);
       this.showList(day); // giorno odierno

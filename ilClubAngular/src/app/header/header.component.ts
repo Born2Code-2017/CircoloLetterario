@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {EventsHandler} from '../Services/eventsHandler.service';
 import {User} from '../models/user';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ export class HeaderComponent implements OnInit {
   isMenuOpen: boolean;
   isCalendarOpen: boolean;
 
-  constructor(private appService: EventsHandler) {
+  constructor(private appService: EventsHandler,private router: Router, activatedRoute: ActivatedRoute) {
     this.isMenuOpen = false;
     this.isCalendarOpen = false;
   }
