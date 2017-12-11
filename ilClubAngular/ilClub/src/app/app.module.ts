@@ -1,10 +1,11 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {routing} from './app.routes';
 
-import {AppComponent} from './app.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { AppComponent } from './app.component';
 import {PageHomeComponent} from './Pages/page-home/page-home.component';
 import {PageNeweventComponent} from './Pages/page-newevent/page-newevent.component';
 import {PageNotfoundcomponentComponent} from './Pages/page-notfoundcomponent/page-notfoundcomponent.component';
@@ -19,6 +20,8 @@ import { EventListComponent } from './event-list/event-list.component';
 import {EventsHandler} from './Services/eventsHandler.service';
 import {AuthGuard} from './Guards/auth.guard';
 import { PageEsploraComponent } from './Pages/page-esplora/page-esplora.component';
+
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,7 @@ import { PageEsploraComponent } from './Pages/page-esplora/page-esplora.componen
   ],
   imports: [
     BrowserModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     FormsModule,
     HttpModule,
     routing
@@ -44,9 +48,7 @@ import { PageEsploraComponent } from './Pages/page-esplora/page-esplora.componen
     FirebaseService,
     NewEventGuard,
     AuthGuard,
-    EventsHandler
-  ],
+    EventsHandler],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }

@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "il-club-angular"
+    "name": "il-club"
   },
   "apps": [
     {
@@ -10,6 +10,7 @@
       "assets": [
         "assets",
         "icons",
+        "Screenshots",
         "favicon.ico",
         "manifest.json"
       ],
@@ -28,7 +29,8 @@
       "environments": {
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
-      }
+      },
+      "serviceWorker": true
     }
   ],
   "e2e": {
@@ -57,10 +59,6 @@
   },
   "defaults": {
     "styleExt": "css",
-    "component": {
-    }
-  },
-  "warnings": {
-    "typescriptMismatch": false
+    "component": {}
   }
 }
