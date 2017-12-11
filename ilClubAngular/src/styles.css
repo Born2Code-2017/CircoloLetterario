@@ -366,12 +366,11 @@ main{
     display: block;
   }
 
-  :root {
+ /* :root {
     --margin-layout: 32px;
-    /*--half-margin-layout: 16px;*/
     --double-margin-layout: 64px;
     --negative-margin-layout: -32px;
-  }
+  }*/
 
   .card{
     width: 50%;
@@ -397,11 +396,11 @@ main{
 }
 
 @media only screen and (min-width: 1200px) {
-  :root {
+ /* :root {
     --margin-layout: 48px;
     --double-margin-layout: 96px;
     --negative-margin-layout: -48px;
-  }
+  }*/
   #menuButton{
     display: none;
   }
@@ -414,12 +413,12 @@ main{
   body, html {
     font-size: 26px;
   }
+  /*
   :root {
     --margin-layout: 64px;
-    /*--half-margin-layout: 32px;*/
     --double-margin-layout: 128px;
     --negative-margin-layout: -64px;
-  }
+  }*/
   .card{
     width: 25%;
   }
