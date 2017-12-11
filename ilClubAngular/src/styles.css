@@ -338,11 +338,22 @@ main{
 .desktop{
   display: none;
 }
-
+#menuButton{
+  padding: 0.8rem var(--margin-layout, 16px);
+}
 
 
 @media only screen and (min-width: 500px) {
 
+}
+@media only screen and (orientation: landscape)
+{
+  .mobile{
+    display: none;
+  }
+  .desktop{
+    display: block;
+  }
 }
 @media only screen and (min-width: 700px) {
   #menuButton{
@@ -377,6 +388,9 @@ main{
     margin: 0;
   }
 }
+
+
+
 /*Desktop*/
 @media only screen and (min-width: 1000px) {
 
