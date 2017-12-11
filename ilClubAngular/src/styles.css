@@ -248,6 +248,9 @@ main{
 .width10{
   width: 10%;
 }
+.width20{
+  width: 20%;
+}
 .width35{
   width: 35%;
 }
@@ -267,7 +270,7 @@ main{
   text-align: center;
 }
 .contentCenter {
-  margin: 0 auto auto auto;
+  margin: 0 auto 0 auto;
 }
 .contentVerticalCenter {
   margin: auto 0;
@@ -329,26 +332,29 @@ main{
 .focus {
   filter: none !important;
 }
-
+.mobile{
+  display: block;
+}
+.desktop{
+  display: none;
+}
 
 
 
 @media only screen and (min-width: 500px) {
-  #menuNav {
-    -webkit-transform: translate(-300px);
-    transform: translateX(-300px);
-  }
+
 }
-@media only screen and (min-width: 800px) {
-  #menuNav {
-    -webkit-transform: translate(0);
-    transform: translateX(0);
-    position: static;
-    /*fisso sulla sinistra*/
-  }
+@media only screen and (min-width: 700px) {
   #menuButton{
     display: none;
   }
+  .mobile{
+    display: none;
+  }
+  .desktop{
+    display: block;
+  }
+
   :root {
     --margin-layout: 32px;
     /*--half-margin-layout: 16px;*/
@@ -373,27 +379,12 @@ main{
 }
 /*Desktop*/
 @media only screen and (min-width: 1000px) {
-  #menuNav {
-    -webkit-transform: translate(-300px);
-    transform: translateX(-300px);
-    position: fixed;
-    /*scorrimento da sinistra*/
-  }
-  #menuButton{
-    display: block;
-  }
+
 }
 
-@media only screen and (min-width: 1440px) {
-  #menuNav {
-    -webkit-transform: translate(0);
-    transform: translateX(0);
-    position: static;
-    /*fisso sulla sinistra*/
-  }
+@media only screen and (min-width: 1200px) {
   :root {
     --margin-layout: 48px;
-    /*--half-margin-layout: 24px;*/
     --double-margin-layout: 96px;
     --negative-margin-layout: -48px;
   }

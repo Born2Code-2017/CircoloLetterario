@@ -1,5 +1,5 @@
 <header class="blurable" [ngClass]="isCalendarOpen? 'blur' : 'focus'">
-  <div class="width35">
+  <div class="width35 mobile">
     <div id="menuButton" class="headerButton" [ngClass]="isMenuOpen ? 'change': '' " (click)="menuClicked()">
       <div id="barra1"></div>
       <div id="barra2"></div>
@@ -7,13 +7,24 @@
     </div>
   </div>
 
-  <a routerLink="/home" class="flexGrow texCenter headerButton" (click)="closeSideMenu()">
-    <h1>ilClub</h1>
-  </a>
+  <div routerLink="/home" class="flexGrow headerButton mobile" (click)="closeSideMenu()">
+    <h1 class="contentVerticalCenter">ilClub</h1>
+  </div>
 
-  <div class="width35 overflow">
-    <div routerLink="esplora" id="notificationButton" class="headerButton floatRight" (click)="closeSideMenu()">
-      <img src="./assets/search.svg" alt="notification" >
+  <div class="width35 overflow mobile">
+    <div routerLink="esplora" class="headerButton floatRight" [style.background-image]="'url(./assets/search.svg)'" (click)="closeSideMenu()">
     </div>
+  </div>
+  <div routerLink="/home" class="headerButton homeHeaderButton desktop" (click)="closeSideMenu()">
+    <h1 class="contentVerticalCenter">&nbsp;&nbsp; ilClub</h1>
+  </div>
+  <div class="desktop">
+    <div routerLink="new-event" class="headerButton contentCenter" [style.background-image]="'url(./assets/new.svg)'"></div>
+  </div>
+  <div class="desktop">
+    <div routerLink="profile" class="headerButton contentCenter" [style.background-image]="'url(./assets/user.svg)'" ></div>
+  </div>
+  <div class="desktop">
+    <div routerLink="esplora" class="headerButton contentCenter" [style.background-image]="'url(./assets/search.svg)'"></div>
   </div>
 </header>

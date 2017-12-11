@@ -1,13 +1,18 @@
 .headerButton {
   cursor: pointer;
   height: 100%;
-  width: fit-content;
-  padding: 0.8rem var(--margin-layout, 16px);
+  width: 3.4rem;
+  background-size: auto 50%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .headerButton:hover {
   background-color: rgba(255, 255, 255, 0.25);
 }
-
+.homeHeaderButton{
+  min-width: 9rem;
+  line-height: 3.4rem;
+}
 #barra1, #barra2, #barra3{
   width: 1.9rem;
   height: 0.2rem;
@@ -30,6 +35,3 @@
   transform: rotate(45deg) translate(-0.25rem, -0.6rem) ;
 }
 
-#notificationButton>img{
-  height: 100%;
-}
