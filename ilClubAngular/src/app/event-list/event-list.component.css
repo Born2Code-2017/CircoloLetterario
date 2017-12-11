@@ -15,7 +15,7 @@ div.EventiUtente div.col-9{
   padding: 0 5%;
 }
 div.EventiUtente div.col-3{
-  background-image: url("../../assets/EventDefault.jpg");
+  background-image: url('../../assets/EventDefault.jpg');
   background-size: cover;
   height: 100%;
 }
