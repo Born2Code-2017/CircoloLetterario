@@ -38,4 +38,8 @@ export class FirebaseService {
     return this.http.put(this.apiUrl + 'Eventi/' + key+'.json', event).map((response: Response) => response.json());
   }
 
+  public edit(key: string, ids: string[]) {
+    return this.http.put(this.apiUrl + key, ids).map((response: Response) => response.json());
+  }
+
 }
