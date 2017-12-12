@@ -1,0 +1,64 @@
+<form novalidate *ngIf="show" #newEventForm="ngForm">
+  <div class="pageTitle" [style.background-image]="'url('+currentEvent.immagine+')'">
+  </div>
+  <div class="cardForm">
+    <label for="nome_evento">Nome dell'evento</label>
+    <input id="nome_evento" name="nome evento" type="text" required [(ngModel)]="currentEvent.titolo">
+    <div>
+      <label for="libreria">Scegli libreria</label>
+      <select required [(ngModel)]="currentEvent.sede" id="libreria" name="libreria">
+        <option value="Libreria Ostia">Libreria Ostia</option>
+        <option value="Libreria Ostia 1">Libreria Ostia 1</option>
+        <option value="Libreria Ostia 2">Libreria Ostia 2</option>
+        <option value="Libreria Ostia 3">Libreria Ostia 3</option>
+      </select>
+    </div>
+
+    <div class="flex">
+      <div class="width50">
+        <label for="data">Data</label>
+        <input required [(ngModel)]="currentEvent.data"
+               id="data" name="data evento" type="date" placeholder="gg/mm/aaaa">
+      </div>
+
+      <div class="width50">
+        <label for="ora">Ora</label>
+        <input required [(ngModel)]="currentEvent.ora" type="time"
+               id="ora" name="ora evento" value="14:30" placeholder="hh:mm" step="60">
+      </div>
+    </div>
+
+    <!-- Terza riga -->
+    <div>
+      <label for="descrizione">Descrizione</label>
+      <textarea required [(ngModel)]="currentEvent.descrizione"
+                rows="5" id="descrizione" name="descrizione evento"
+                placeholder="Descrizione evento..." maxlength="400"> </textarea>
+    </div>
+    <div>
+      <label for="imgUrl">Genere evento</label>
+      <select required [(ngModel)]="currentEvent.immagine" id="imgUrl" name="genere evento" [value]="currentEvent.immagine">
+        <option value="./assets/type-event/default.jpg">Generale</option>
+        <option value="./assets/type-event/cinema.jpg">Arte e cinema</option>
+        <option value="./assets/type-event/cucina.jpg">Cucina</option>
+        <option value="./assets/type-event/fantascienza.jpg">Fantascienza</option>
+        <option value="./assets/type-event/filosofia.jpg">Filosofia</option>
+        <option value="./assets/type-event/fotografia.jpg">Fotografia</option>
+        <option value="./assets/type-event/fumetti.jpg">Fumetti e manga</option>
+        <option value="./assets/type-event/giallo.jpg">Gialli</option>
+        <option value="./assets/type-event/horror.jpg">Horror</option>
+        <option value="./assets/type-event/letteratura.jpg">Letteratura</option>
+        <option value="./assets/type-event/manuali.jpg">Manualistica</option>
+        <option value="./assets/type-event/tempo-libero.jpg">Tempo libero e salute</option>
+        <option value="./assets/type-event/thriller.jpg">Thriller</option>
+      </select>
+    </div>
+    <!-- Quarta riga -->
+  </div>
+  <div class="flex paddingLayoutRoule">
+    <input class="flexGrow squareButton" name="cancella evento" type="button" (click)="cancel()" value="❮  cancella">
+    <div class="widthLayoutRoule"></div>
+    <input class="flexGrow squareButton accentButton" type="button" name="salva evento"
+           [disabled]="!newEventForm.valid || newEventForm.pristine" (click)="save()" value="salva">
+  </div>
+</form>

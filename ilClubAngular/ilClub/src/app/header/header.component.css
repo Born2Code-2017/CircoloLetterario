@@ -1,0 +1,37 @@
+.headerButton {
+  cursor: pointer;
+  height: 100%;
+  width: 3.4rem;
+  background-size: auto 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.headerButton:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+.homeHeaderButton{
+  min-width: 9rem;
+  line-height: 3.4rem;
+}
+#barra1, #barra2, #barra3{
+  width: 1.9rem;
+  height: 0.2rem;
+  background-color: white;
+  margin: 0.2rem 0px;
+  transition: 0.3s;
+  transition-timing-function: ease-in;
+}
+#barra2{
+  margin: 0.4rem 0px;
+}
+
+.change #barra1 {
+  -webkit-transform: rotate(-45deg) translate(-0.25rem, 0.6rem) ;
+  transform: rotate(-45deg) translate(-0.25rem, 0.6rem) ;
+}
+.change #barra2 {opacity: 0;}
+.change #barra3 {
+  -webkit-transform: rotate(45deg) translate(-0.25rem, -0.6rem) ;
+  transform: rotate(45deg) translate(-0.25rem, -0.6rem) ;
+}
+

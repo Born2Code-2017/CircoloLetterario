@@ -1,0 +1,67 @@
+.menuNav{
+  width: 100vw;
+  height: calc(100% - 3.4rem);
+  position: fixed;
+  top: 3.4rem;
+  display: flex;
+  color: white;
+  transform: translateX(-100vw);
+  transition: transform 0.2s ease-in;
+  z-index: 500;
+}
+.menuNav>*:first-child {
+  width: 300px;
+  height: 100%;
+  background-color: var(--ilClub-red, #B30000);
+  padding: var(--margin-layout, 16px);
+  box-shadow: 9px 0 10px -8px rgba(0, 0, 0, 0.35);
+}
+.menuNav>*:last-child{
+  background-color: transparent;
+}
+.change1 {
+  -webkit-transform: translateX(0) !important;
+  transform: translateX(0) !important;
+}
+.profileImg {
+  width: 9rem;
+  height: 9rem;
+  margin: 0 auto 0 auto;
+  border-radius: 50%;
+  border: 0.18rem white solid;
+  background: url('../../assets/profile.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.counterContainer {
+  width: 8rem;
+  margin: 0 auto 0 auto;
+}
+.counterContainer p {
+  color: white;
+  font-size: 1.75rem;
+}
+.counterContainer img {
+  height: 1.45rem;
+}
+.menuList li{
+  padding-bottom: var(--margin-layout, 16px);
+  padding-top: var(--margin-layout, 16px);
+  font-size: 1.3rem;
+  overflow: hidden;
+  transition: transform 0.1s ease-in;
+}
+
+.menuList li a{
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+.menuList li:hover {
+  -webkit-transform: translate(35px, 0);
+  transform: translate(35px, 0);
+}
+.menuList li img {
+  height: 1.45rem;
+  float: right;
+}

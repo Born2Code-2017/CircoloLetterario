@@ -1,0 +1,6 @@
+.profileBackground {
+  height: 14rem;
+  background: url('../../../assets/profile.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}

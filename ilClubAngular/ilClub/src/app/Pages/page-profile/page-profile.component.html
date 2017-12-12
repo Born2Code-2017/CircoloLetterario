@@ -1,0 +1,9 @@
+<div class="profileBackground"></div>
+<section class="cardDetail">
+  <h2>{{currentUser.nome}} {{currentUser.cognome}}</h2>
+  <h3>{{currentUser.email}}</h3>
+  <p class="textJustified lineMargin">{{currentUser.descrizione}}</p>
+</section>
+<section>
+  <app-event-list [eventsId]="currentUser.eventi" [ownerFilter]="true"></app-event-list>
+</section>
