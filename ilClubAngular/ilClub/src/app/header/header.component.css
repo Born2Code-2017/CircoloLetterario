@@ -2,6 +2,7 @@
   cursor: pointer;
   height: 100%;
   width: 3.4rem;
+  text-align: center;
   background-size: auto 50%;
   background-position: center;
   background-repeat: no-repeat;
@@ -11,8 +12,10 @@
 }
 .homeHeaderButton{
   min-width: 9rem;
-  line-height: 3.4rem;
 }
+.headerButton>*{
+   line-height: 3.4rem;
+ }
 #barra1, #barra2, #barra3{
   width: 1.9rem;
   height: 0.2rem;
