@@ -18,7 +18,9 @@ export class EventListComponent implements OnInit {
   showEvents: Event[];
   currentUser: User;
 
-  @Input() esplora: boolean;
+  @Input() esploraFilter: boolean;
+  @Input() ownerFilter: boolean;
+  @Input() goingFilter: boolean;
 
   constructor(private router: Router, activatedRoute: ActivatedRoute, private service: FirebaseService) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -38,53 +40,28 @@ export class EventListComponent implements OnInit {
       for (const idx in events) {
         console.log('event:' + idx);
         console.log(this.eventsId);
-
-        //solo i miei eventi
-        if (!this.esplora) {
-
-          if(events[idx].owner.toLowerCase() === this.currentUser.email.toLowerCase() || this.eventsId && _.includes(this.eventsId, idx)){
-            console.log('miei eventi');
-            const tmpEvent = {
-              key: idx,
-              data: events[idx].data,
-              id: events[idx].id,
-              descrizione: events[idx].descrizione,
-              immagine: events[idx].immagine,
-              ora: events[idx].ora,
-              owner: events[idx].owner,
-              partecipanti: events[idx].partecipanti,
-              sede: events[idx].sede,
-              titolo: events[idx].titolo
-            };
-            this.eventList.push(tmpEvent);
-          }
-      
+        const isOwner = events[idx].owner.toLowerCase() === this.currentUser.email.toLowerCase();
+        const isGoing = _.includes(this.currentUser.eventi, idx);
+        console.log('isOwner:' + isOwner);
+        console.log('isGoing:' + isGoing);
+        if ((this.esploraFilter && isOwner === false && isGoing === false) ||
+          (this.goingFilter && (isOwner || isGoing)) ||
+          (this.ownerFilter && isOwner)) {
+          console.log('add evento to list');
+          const tmpEvent = {
+            key: idx,
+            data: events[idx].data,
+            id: events[idx].id,
+            descrizione: events[idx].descrizione,
+            immagine: events[idx].immagine,
+            ora: events[idx].ora,
+            owner: events[idx].owner,
+            partecipanti: events[idx].partecipanti,
+            sede: events[idx].sede,
+            titolo: events[idx].titolo
+          };
+          this.eventList.push(tmpEvent);
         }
-        //esplora nuovi eventi
-        else if (this.esplora){
-
-          if(events[idx].owner.toLowerCase() !== this.currentUser.email.toLowerCase() && !this.eventsId[idx]){
-
-            console.log('esplora eventi');
-            const tmpEvent = {
-              key: idx,
-              data: events[idx].data,
-              id: events[idx].id,
-              descrizione: events[idx].descrizione,
-              immagine: events[idx].immagine,
-              ora: events[idx].ora,
-              owner: events[idx].owner,
-              partecipanti: events[idx].partecipanti,
-              sede: events[idx].sede,
-              titolo: events[idx].titolo
-            };
-            this.eventList.push(tmpEvent);
-
-          }
-
-        }
-
-
       }
       this.eventList = _.sortBy(this.eventList, e => e.data);
       this.showList(day); // giorno odierno
@@ -100,9 +77,6 @@ export class EventListComponent implements OnInit {
       if (parseFloat(dayNumber) >= selectedDay) {
         // console.log(idx);
         this.showEvents.push(event);
-
-        // console.log(this.eventList[idx]);
-        // console.log("giorno: "+numero);
       }
     }
     console.log('this.showEvents caricato:' + this.showEvents);
@@ -118,19 +92,15 @@ export class EventListComponent implements OnInit {
           // chiave evento
           console.log(key);
           console.log(eventidx);
-          // this.eventList.splice(parseInt(eventidx),1);
 
           this.service.deleteEvent(key).subscribe(arg => {
             console.log('eliminato');
-            // this.router.navigateByUrl('/home');
             this.loadList(1);
           });
 
         }
       }
     }
-    // console.log(key);
-    // this.loadList(1);
   }
 
   editEvent(key: string) {

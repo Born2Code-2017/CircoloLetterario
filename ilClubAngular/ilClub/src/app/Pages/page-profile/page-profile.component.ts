@@ -8,13 +8,11 @@ import { User } from '../../models/user';
 })
 export class PageProfileComponent {
   currentUser: User;
+  idTaken: boolean;
 
   constructor() {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    console.log('PROFILE this.currentUser ' + this.currentUser);
+    this.idTaken = (this.currentUser != null);
   }
-  editImage() {
-    // qui faccio la modifica dell'immagine di profilo
-    // cliccando su edit l'utente puo cambiare l'immagine del profilo
-  }
+
 }
