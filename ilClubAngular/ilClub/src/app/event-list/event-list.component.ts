@@ -110,6 +110,6 @@ export class EventListComponent implements OnInit {
   partecipaEvent(key: string) {
 
   this.eventsId.push(key);
-  this.service.edit('Utenti/'+this.currentUser+'/eventi.json', this.eventsId).subscribe(ids => this.loadList(1));
+  this.service.edit('Utenti/'+this.currentUser+'/eventi.json', key).subscribe(ids => this.loadList(1));
 
 }
