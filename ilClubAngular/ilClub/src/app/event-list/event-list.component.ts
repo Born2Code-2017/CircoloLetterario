@@ -109,8 +109,29 @@ export class EventListComponent implements OnInit {
 
   partecipaEvent(key: string) {
 
-    this.eventsId.push(key);
-    this.service.edit('Utenti/' + this.currentUser + '/eventi.json', key).subscribe(ids => this.loadList(1));
+    var keys = this.currentUser.eventi;
+    console.log(Object.keys(keys).length);
+    if(_.includes(keys, key)){
+      //tolgo
+      console.log(keys); 
+      //keys.splice(keys[key],1);
+      delete keys[key];
+      this.currentUser.eventi = keys;
+      console.log(Object.keys(this.currentUser.eventi).length);
+      localStorage.setItem("currentUser", JSON.stringify(this.currentUser));
+
+    }else{
+
+      //aggiungo
+      console.log(keys); 
+      keys[key]=key;
+      //keys.push(key);
+      this.currentUser.eventi = keys;
+      console.log(Object.keys(this.currentUser.eventi).length);
+      localStorage.setItem("currentUser", JSON.stringify(this.currentUser));
+    }
+    this.loadList(1);
+    //this.service.edit('Utenti/' + this.currentUser + '/eventi.json', key).subscribe(ids => this.loadList(1));
 
   }
 }
