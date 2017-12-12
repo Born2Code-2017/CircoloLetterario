@@ -33,4 +33,9 @@ export class HeaderComponent implements OnInit {
   menuClicked() {
     this.appService.setIsMenuOpen(!this.isMenuOpen);
   }
+  logout() {
+    localStorage.removeItem('currentUser');
+    console.log('logout effetuato con successo');
+    this.router.navigateByUrl('/login');
+  }
 }

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { EventsHandler } from '../Services/eventsHandler.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-sidemenu',
@@ -9,7 +10,7 @@ import { EventsHandler } from '../Services/eventsHandler.service';
 export class SideMenuComponent implements OnInit {
   isMenuOpen: boolean;
 
-  constructor(private appService: EventsHandler) {
+  constructor(private router: Router, private appService: EventsHandler) {
     this.isMenuOpen = false;
   }
 
@@ -26,5 +27,11 @@ export class SideMenuComponent implements OnInit {
       console.log('SIDEMENU getIsMenuOpen: ' + isMenuOpen);
       this.isMenuOpen = isMenuOpen;
     });
+  }
+  logout() {
+    localStorage.removeItem('currentUser');
+    console.log('logout effetuato con successo');
+    this.close();
+    this.router.navigateByUrl('/login');
   }
 }
