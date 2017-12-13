@@ -3,7 +3,7 @@
   height: calc(100% - 3.4rem);
   position: fixed;
   top: 3.4rem;
-  display: flex;
+  display: none;
   color: white;
   transform: translateX(-100vw);
   transition: transform 0.2s ease-in;
@@ -20,6 +20,7 @@
   background-color: transparent;
 }
 .change1 {
+  display: flex !important;
   -webkit-transform: translateX(0) !important;
   transform: translateX(0) !important;
 }

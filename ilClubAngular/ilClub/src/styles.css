@@ -7,6 +7,12 @@
   --ilClub-darkGray : rgb(78, 78, 78);
   --ilClub-lightGray: rgb(241, 241, 241);
 }
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/font/EBGaramond-Regular.ttf');
+}
 * {
   box-sizing: border-box;
 }
@@ -37,8 +43,10 @@ body, html {
   margin: 0;
   padding: 0;
   font-size: 14px;
-  font-family: 'EB Garamond', serif;
   background: var(--ilClub-lightGray, rgb(241, 241, 241));
+}
+body{
+  font-family: 'EB Garamond', serif;
 }
 h1, h2, h3, p, ul{
   margin: 0px;
@@ -341,13 +349,29 @@ main{
 #menuButton{
   padding: 0.8rem var(--margin-layout, 16px);
 }
-
-
-@media only screen and (min-width: 500px) {
-
+.backgroundImage{
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 500;
+}
+@media only screen and (max-width: 500px) and (orientation: portrait) {
+  .backgroundImage{
+    background: url('./assets/loginBkgMobile.jpg') no-repeat top center;
+  }
+}
+@media only screen and (min-width: 501px) {
+  .backgroundImage{
+    background: url('./assets/loginBkg_media.jpg') no-repeat top center;
+  }
 }
 @media only screen and (orientation: landscape)
 {
+  .backgroundImage {
+    background: url('./assets/loginBkg_media.jpg') no-repeat top center;
+  }
   .mobile{
     display: none;
   }
@@ -401,6 +425,9 @@ main{
     --double-margin-layout: 96px;
     --negative-margin-layout: -48px;
   }*/
+  .backgroundImage {
+    background: url('./assets/loginBkg.jpg') no-repeat top center;
+  }
   #menuButton{
     display: none;
   }

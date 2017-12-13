@@ -16,17 +16,15 @@
     }
   }, {
     "name": "assets",
-    "installMode": "prefetch",
+    "installMode": "lazy",
     "updateMode": "prefetch",
     "resources": {
       "files": [
         "/assets/**",
         "/icons/**",
         "/Screenshots/**"
-      ],
-      "urls": [
-        "https://fonts.googleapis.com/css?family=EB+Garamond"
       ]
+
     }
   }]
 }
