@@ -137,13 +137,13 @@ main{
 }
 
 .calendarIcon{
-  background-image: url('assets/calendarBlack.svg');
+  background-image: url('assets/calendarBlack.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50%;
 }
 .newIcon{
-  background-image: url('assets/new.svg');
+  background-image: url('assets/new.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50%;
@@ -203,16 +203,16 @@ main{
   box-shadow: none;
 }
 .cRBdelete{
-  background: var(--ilClub-red, #B30000) url('assets/delete.svg') no-repeat center;
+  background: var(--ilClub-red, #B30000) url('assets/delete.png') no-repeat center;
 }
 .cRBedit{
-  background: var(--ilClub-red, #B30000) url('assets/editButton.svg') no-repeat center;
+  background: var(--ilClub-red, #B30000) url('assets/editButton.png') no-repeat center;
 }
 .cRBnoPartecipa{
-  background: var(--ilClub-red, #B30000) url('assets/bookmark.svg') no-repeat center;
+  background: var(--ilClub-red, #B30000) url('assets/bookmark.png') no-repeat center;
 }
 .cRBpartecipa{
-  background: var(--ilClub-darkGray, rgb(78, 78, 78)) url('assets/bookmark.svg') no-repeat center;
+  background: var(--ilClub-darkGray, rgb(78, 78, 78)) url('assets/bookmark.png') no-repeat center;
   /*vuoto*/
 }
 
