@@ -373,10 +373,10 @@ main{
     background: url('./assets/loginBkg_media.jpg') no-repeat top center;
   }
   .mobile{
-    display: none;
+    display: none !important;
   }
   .desktop{
-    display: block;
+    display: block !important;
   }
 }
 @media only screen and (min-width: 700px) {
@@ -384,10 +384,10 @@ main{
     display: none;
   }
   .mobile{
-    display: none;
+    display: none !important;
   }
   .desktop{
-    display: block;
+    display: block !important;
   }
 
  /* :root {

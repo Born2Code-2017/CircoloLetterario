@@ -12,6 +12,14 @@ export class SideMenuComponent implements OnInit {
 
   constructor(private router: Router, private appService: EventsHandler) {
     this.isMenuOpen = false;
+    window.addEventListener('orientationchange', () => {
+      if(Math.abs(Number(window.orientation)) === 90)
+        this.close(); // close menu on landscape
+      }, false);
+    window.addEventListener("resize", () => {
+      if(window.innerWidth >= 700)
+        this.close();
+    });
   }
 
   ngOnInit() {
@@ -28,6 +36,7 @@ export class SideMenuComponent implements OnInit {
       this.isMenuOpen = isMenuOpen;
     });
   }
+
   logout() {
     localStorage.removeItem('currentUser');
     console.log('logout effetuato con successo');

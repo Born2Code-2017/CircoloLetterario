@@ -58,7 +58,7 @@ export const appRoutes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'Page-not-found',
+    redirectTo: 'page-not-found',
     pathMatch: 'full'
   }
 ];
